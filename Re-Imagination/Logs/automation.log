@@ -1,4 +1,30 @@
-11:45:40.268 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.XMLReporter@73d4066e: 11 ms
-11:45:40.281 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@17d32e9b: 10 ms
-11:45:40.289 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@65d57e4e: 7 ms
-11:45:40.290 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@6daf7d37: 1 ms
+18:24:03.969 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+18:25:04.527 [main] INFO  testCases.AccountOpening - ** Clicked on Proceed to Preview ***
+18:25:04.851 [main] INFO  testCases.AccountOpening - ** Clicked on Proceed to Cust Auth ***
+18:27:24.244 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+18:28:19.880 [main] INFO  testCases.AccountOpening - ** Clicked on Proceed to Preview ***
+18:28:21.528 [main] INFO  testCases.AccountOpening - ** Clicked on Proceed to Cust Auth ***
+18:30:58.515 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+18:31:56.434 [main] INFO  testCases.AccountOpening - ** Clicked on Proceed to Preview ***
+18:31:56.611 [main] INFO  testCases.AccountOpening - ** Clicked on Proceed to Cust Auth ***
+18:32:39.659 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+18:33:40.370 [main] INFO  testCases.AccountOpening - ** Clicked on Proceed to Preview ***
+18:33:42.074 [main] INFO  testCases.AccountOpening - ** Clicked on Proceed to Cust Auth ***
+18:45:40.478 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+18:46:54.601 [main] INFO  testCases.AccountOpening - ** Clicked on Proceed to Preview ***
+18:46:56.468 [main] INFO  testCases.AccountOpening - ** Clicked on Proceed to Cust Auth ***
+18:49:00.879 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+18:50:04.434 [main] INFO  testCases.AccountOpening - ** Clicked on Proceed to Preview ***
+18:50:04.558 [main] INFO  testCases.AccountOpening - ** Clicked on Proceed to Cust Auth ***

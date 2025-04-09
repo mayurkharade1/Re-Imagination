@@ -1,0 +1,31 @@
+package pageObjects;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class HomePage extends BasePage{
+
+	public HomePage(WebDriver driver) {
+		super(driver);
+	}
+	
+	@FindBy(xpath = "//a[text()='Aadhaar Seeding & Aadhaar De-Seeding']")
+	WebElement AadharSeedDeseedMenu;
+	@FindBy(xpath = "//a[text()='Aadhaar Seeding SubKO']")
+	WebElement AadharSeedSubKOMenu;
+	@FindBy(xpath = "//a[text()='Cheque Book Request']")
+	WebElement chequeBookMenu;
+	@FindBy(xpath = "//a[text()='Stop Payment of Cheque']")
+	WebElement stopChequeMenu;
+	
+	
+	public void clickOnChequeBook() {
+		chequeBookMenu.click();
+	}
+	
+	public void clickOnStopCheque() {
+		stopChequeMenu.click();
+	}
+
+}

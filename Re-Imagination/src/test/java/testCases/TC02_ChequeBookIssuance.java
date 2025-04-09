@@ -18,7 +18,7 @@ public class TC02_ChequeBookIssuance extends BaseClass{
 		HomePage hp= new HomePage(driver);
 		
 		hp.clickOnChequeBook();
-		logger.info("** ChequeBook Issuance Started ***");
+		logger.info("** Clicked On ChequeBook Issuance Menu ***");
 		
 		ChequeBookIssue ch= new ChequeBookIssue(driver);
 		
@@ -46,7 +46,7 @@ public class TC02_ChequeBookIssuance extends BaseClass{
 			logger.error("Test Failed");
 			Assert.fail();
 		}
-		
+		 
 		
 		
 	}

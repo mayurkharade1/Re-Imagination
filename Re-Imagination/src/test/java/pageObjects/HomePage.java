@@ -18,6 +18,10 @@ public class HomePage extends BasePage{
 	WebElement chequeBookMenu;
 	@FindBy(xpath = "//a[text()='Stop Payment of Cheque']")
 	WebElement stopChequeMenu;
+	@FindBy(xpath = "//a[text()='Account Opening']")
+	WebElement accOpenMenu;
+	@FindBy(xpath = "//a[text()='eKYC']")
+	WebElement accOpenEkycMenu;
 	
 	
 	public void clickOnChequeBook() {
@@ -28,4 +32,10 @@ public class HomePage extends BasePage{
 		stopChequeMenu.click();
 	}
 
+	public void clickOnAccOpenMenu() {
+		accOpenMenu.click();
+	}
+	public void clickOnEkycMenu() {
+		accOpenEkycMenu.click();
+	}
 }

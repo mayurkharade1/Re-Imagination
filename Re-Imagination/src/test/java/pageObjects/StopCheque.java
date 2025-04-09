@@ -54,15 +54,15 @@ public class StopCheque extends BasePage{
 	}
 	
 	public void clickOnProceedtoConfirm() {
-		btnProceedCheqHome.click();
+		//btnProceedCheHome.click();
 	}
 	
 	public void clickOnProceedonConfirmationPage() {
-		btnProceedConfiPage.click();
+		
 	}
 	
 	public void EnterAgentPassword(String agentPass) {
-		txtAgentAuth.sendKeys(agentPass);
+		btnProceedCustAuth.sendKeys(agentPass);
 		btnProceedAgentauth.click();
 	}
 	
