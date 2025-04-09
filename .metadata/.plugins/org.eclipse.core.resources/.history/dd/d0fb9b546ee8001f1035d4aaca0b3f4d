@@ -1,0 +1,27 @@
+package Interface;
+
+public class InterfaceDemo implements I1,I2
+{
+	
+	
+	public void cal(int a) {
+		System.out.println(a);
+		
+	}
+
+	public static void main(String[] args) {
+		
+		InterfaceDemo id= new InterfaceDemo();
+		
+		id.cal(20);
+		id.m1();
+		System.out.println(I2.a);
+
+	}
+
+	
+
+	
+	
+
+}

@@ -1,0 +1,10 @@
+package Interface;
+
+public interface I2 
+{
+	int a=100;
+	int b=200;
+	
+	void cal(int a);
+
+}

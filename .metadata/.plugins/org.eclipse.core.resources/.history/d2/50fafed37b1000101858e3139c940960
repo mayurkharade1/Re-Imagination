@@ -1,0 +1,84 @@
+import java.sql.Driver;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import javax.swing.JOptionPane;
+import org.checkerframework.checker.units.qual.Time;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
+
+public class Login {
+	
+	//WebDriver wd = new ChromeDriver();
+	//WebDriverWait w = new WebDriverWait(wd,Duration.ofSeconds(10));
+
+	
+	 public WebDriver wd;
+	  public Login(){
+		  ChromeOptions options = new ChromeOptions();
+			options.setAcceptInsecureCerts(true);
+	   wd = new ChromeDriver(options);
+	  }
+	  public WebDriver getdriver(){
+	    if (wd == null){
+	    	ChromeOptions options = new ChromeOptions();
+			options.setAcceptInsecureCerts(true);
+	      wd = new ChromeDriver(options);
+	      return wd;
+	    }else{
+	      return wd;
+	    }
+	  }
+	
+	  
+	  public void login1() throws InterruptedException {
+		//WebDriver wd=new ChromeDriver();
+		wd.manage().window().maximize();
+		
+		wd.get("https://kioskuat.bank.sbi/unifyapp/login/");
+		
+		WebElement username=wd.findElement(By.cssSelector("input[placeholder='Enter User ID']"));
+		
+		username.sendKeys("3K580036");
+		
+		WebElement password= wd.findElement(By.cssSelector("input[placeholder='Enter Password']"));
+		
+		password.sendKeys("dfi@1234");
+		
+		String captcha;
+		captcha = JOptionPane.showInputDialog("Please Enter The Captcha");
+		WebElement Captcha = wd.findElement(By.cssSelector("input[placeholder='Enter Captcha']"));
+		Captcha.sendKeys(captcha);
+		
+		//Proceed Button
+		wd.findElement(By.xpath("button[class='proceedbutton btn btn-contained']")).click();
+		
+		Thread.sleep(9000);
+		
+		WebElement fp = wd.findElement(By.xpath("//img[@alt='FingerprintFirstNew']"));
+		
+		fp.click();
+		Thread.sleep(5000);
+				
+		
+
+	}
+	
+	
+
+}

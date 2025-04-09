@@ -1,0 +1,18 @@
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class IAO_Enquiry extends Login {
+
+	WebDriverWait w = new WebDriverWait(wd, Duration.ofSeconds(50));
+
+	public void Enquiry_RefNo() throws InterruptedException {
+
+		// clicked on IAO
+		getdriver().findElement(By.xpath("//a[normalize-space()='Account Opening']")).click();
+		Thread.sleep(1000);
+
+	}
+
+}

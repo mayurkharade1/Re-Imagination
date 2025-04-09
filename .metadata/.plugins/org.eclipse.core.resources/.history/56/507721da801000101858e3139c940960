@@ -1,0 +1,92 @@
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Aadhar_Seeding extends Login{
+	WebDriverWait w = new WebDriverWait(wd,Duration.ofSeconds(50));
+	
+		
+	public void Seeding() throws InterruptedException {
+
+		try{
+			System.out.println("Current Tab:" + wd.getTitle());
+		
+
+		// Actions current_tab = new Actions(wd);
+
+		// clicked on seeding
+		getdriver().findElement(By.xpath("//a[normalize-space()='Seeding']")).click();
+		Thread.sleep(1000);
+		
+		//click on ekyc
+		//getdriver().findElement(By.xpath("//a[normalize-space()='eKYC']")).click();
+
+		Thread.sleep(2000);
+
+		// AADHAR Input
+		getdriver().findElement(By.cssSelector("input[placeholder='Enter Aadhaar Number']"))
+		.sendKeys("731817444183");
+		Thread.sleep(1000);
+		
+		// Account Input
+		getdriver().findElement(By.cssSelector("input[placeholder='Enter Account Number']"))
+				.sendKeys("50003413184");
+				Thread.sleep(3000);
+		
+		// Proceed Button
+		getdriver().findElement(By.xpath("//p[normalize-space()='Proceed']")).click();
+		Thread.sleep(2000);
+
+		
+		+
+		// click on scanner
+		w.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//img[@alt='FingerprintFirstNew']"))).click();
+		System.out.println("Click on scanner");
+
+		//Waiting for FP Capture
+		Thread.sleep(3000);
+		//Click on proceed
+		w.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//p[normalize-space()='PROCEED']"))).click();
+		
+		//Popup for previous ref no 
+		w.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[3]/div/div/div/div/div[6]/div/button/p"))).click();
+		Thread.sleep(2000);
+		System.out.println("Clicked OK on Popup for previous ref no ");
+		
+		w.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//p[normalize-space()='Proceed']"))).click();
+		Thread.sleep(15000);
+		
+		System.out.println("Clicked OK on initial details screen");
+		
+		//select title
+		//enter mob no.
+		//click verify
+		//select contry
+		//proceed
+		//w.until(ExpectedConditions.presenceOfElementLocated(By.xpath(""))).click();
+		//Thread.sleep(15000); //waiting for precheck
+		//click on ok
+		///Customer Details page////
+		//Enter pincode
+
+		
+	}
+	catch(Exception e) {
+		System.out.println("Exception Occured");
+	}
+		
+		
+		
+	}
+	
+	void teardown()
+	{
+		wd.quit();
+		
+	}
+
+}
+

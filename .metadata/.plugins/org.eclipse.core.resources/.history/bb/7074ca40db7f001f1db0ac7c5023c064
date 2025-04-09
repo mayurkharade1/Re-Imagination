@@ -1,0 +1,15 @@
+
+public class IAO_Main {
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+		
+		IAO_Enroll s=new IAO_Enroll();
+		s.do_Login();
+		
+		Thread.sleep(3000);
+		s.teardown();
+		//s.IAO_Enroll_New();
+	}
+
+}

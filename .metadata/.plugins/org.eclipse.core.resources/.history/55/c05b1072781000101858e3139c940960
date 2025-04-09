@@ -1,0 +1,24 @@
+import org.openqa.selenium.WebDriver;
+
+public class Main {
+
+	public static void main(String[] args) throws InterruptedException 
+	{
+	
+		
+		IAO_Enroll s=new IAO_Enroll();
+		
+		Login lgn=new Login();
+		
+		lgn.login1();
+		
+		
+		//s.login1();
+		
+		//s.do_Login();
+		//s.IAO_Enroll_New();
+		//Thread.sleep(3000);
+		s.teardown();
+	}
+
+}

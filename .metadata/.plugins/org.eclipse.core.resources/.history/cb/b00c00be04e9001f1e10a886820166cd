@@ -1,0 +1,11 @@
+package Interface;
+
+public interface I1 {
+	
+	default void m1()
+	{
+		
+		System.out.println("This is m1 from I1");
+	}
+
+}
