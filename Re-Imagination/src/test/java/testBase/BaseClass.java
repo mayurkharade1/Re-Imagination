@@ -40,7 +40,7 @@ public class BaseClass {
 		}
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 
 		driver.get(p.getProperty("AppUrl"));
 		
@@ -59,6 +59,7 @@ public class BaseClass {
 	{
 		//Thread.sleep(15000);
 		//driver.quit();
+		//driver.close();
 		
 	}
 }

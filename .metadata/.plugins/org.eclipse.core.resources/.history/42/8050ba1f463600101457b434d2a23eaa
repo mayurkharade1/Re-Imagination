@@ -1,0 +1,39 @@
+package testCases;
+
+import org.testng.annotations.Test;
+
+import pageObjects.AadharSeedingDeseeding;
+import pageObjects.HomePage;
+import testBase.BaseClass;
+
+public class TC03_AadharSeedingDeesing extends BaseClass
+{
+	HomePage hp = new HomePage(driver);
+	AadharSeedingDeseeding as= new AadharSeedingDeseeding(driver);
+	
+	//@Test (priority = 2)
+	public void AadharSeeding(){
+		hp.clickOnAadharSeedingMenu();
+		
+		as.EnterUIDtoseeding("731817444183");
+		as.EnterAcctoDeseeding("50003413184");
+		as.clickOnproceed();
+			
+		
+	}
+	
+	@Test (priority = 1)
+	public void AadharDeSeeding(){
+		hp.clickOnAadharSeedingMenu();
+		
+		as.clickOnDeseedingMenu();
+		as.EnterUIDtoDeseeding("731817444183");
+		as.EnterAcctoDeseeding("50003413184");
+		as.clickOnproceed();
+		as.EnterAgentPassword("dfi@1234");
+		as.ProceedAgentPassword();
+			
+		
+	}
+	
+}

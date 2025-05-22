@@ -1,0 +1,53 @@
+16:03:38.176 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on CkycDetails Tab 2 ***
+16:03:38.580 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on NomineeDetails Tab 1***
+16:03:38.851 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on NomineeDetails Tab 2***
+16:03:39.211 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed to Preview ***
+16:03:41.330 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed to CustAuth ***
+16:03:41.388 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Ok Aeps Consent ***
+16:04:11.409 [main] ERROR testCases.IAO_Continue_Customer_Creation - Exception Found
+16:08:26.260 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+16:08:57.311 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed after UID ***
+16:09:03.973 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on FP Scanner Button ***
+16:09:04.382 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed Fp Capture ***
+16:09:04.993 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Ok Button Popup ***
+16:09:05.497 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed Button Initial Details ***
+16:09:12.500 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Customer Details Tab  ***
+16:09:12.971 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on CkycDetails Tab 1***
+16:09:13.244 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on CkycDetails Tab 2 ***
+16:09:13.630 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on NomineeDetails Tab 1***
+16:09:13.916 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on NomineeDetails Tab 2***
+16:09:14.264 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed to Preview ***
+16:09:16.410 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed to CustAuth ***
+16:09:16.660 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Ok Aeps Consent ***
+16:09:18.412 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Yes Pan Consent ***
+16:09:26.405 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Fp Scan CustAuth Final ***
+16:09:26.924 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Final Proceed ***
+16:09:56.983 [main] ERROR testCases.IAO_Continue_Customer_Creation - Exception Found
+16:29:50.024 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+16:30:37.546 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed after UID ***
+16:30:44.498 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on FP Scanner Button ***
+16:30:44.890 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed Fp Capture ***
+16:30:47.071 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Ok Button Popup ***
+16:30:47.559 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed Button Initial Details ***
+16:30:56.319 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Customer Details Tab  ***
+16:30:56.757 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on CkycDetails Tab 1***
+16:30:57.035 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on CkycDetails Tab 2 ***
+16:30:57.453 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on NomineeDetails Tab 1***
+16:30:57.759 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on NomineeDetails Tab 2***
+16:30:58.107 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed to Preview ***
+16:31:00.319 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed to CustAuth ***
+16:31:00.587 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Ok Aeps Consent ***
+16:31:02.528 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Yes Pan Consent ***
+16:31:09.379 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Fp Scan CustAuth Final ***
+16:31:09.853 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Final Proceed ***
+16:31:39.948 [main] ERROR testCases.IAO_Continue_Customer_Creation - Exception Found
+17:05:31.303 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+17:06:06.745 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed after UID ***
+17:06:13.309 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on FP Scanner Button ***
+17:06:13.662 [main] INFO  testCases.IAO_Continue_Customer_Creation - ** Clicked on Proceed Fp Capture ***

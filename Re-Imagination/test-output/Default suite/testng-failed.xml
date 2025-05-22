@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.AccountOpening">
+      <class name="testCases.IAO_Continue_Customer_Creation">
         <methods>
-          <include name="Ekyc_Enrollment"/>
           <include name="tearDown"/>
           <include name="Login"/>
+          <include name="Ekyc_Enrollment"/>
         </methods>
-      </class> <!-- testCases.AccountOpening -->
+      </class> <!-- testCases.IAO_Continue_Customer_Creation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

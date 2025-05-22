@@ -29,7 +29,7 @@ public class StopCheque extends BasePage{
 	@FindBy(xpath = "//button[text()='8']")
 	WebElement btnDateSelec;
 	
-	
+	 
 	
 	
 	@FindBy(xpath = "//input[@type='password']")
@@ -54,7 +54,7 @@ public class StopCheque extends BasePage{
 	}
 	
 	public void clickOnProceedtoConfirm() {
-		//btnProceedCheHome.click();
+		
 	}
 	
 	public void clickOnProceedonConfirmationPage() {

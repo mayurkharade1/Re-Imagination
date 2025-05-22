@@ -1,0 +1,55 @@
+package testCases;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import pageObjects.AccountOpeningEkyc;
+import pageObjects.HomePage;
+import testBase.BaseClass;
+
+public class IAO_Continue_Customer_Creation extends BaseClass{
+	
+	@Test
+	
+		public void Ekyc_Enrollment() throws InterruptedException {
+	try {
+		
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+		
+		HomePage hp = new HomePage(driver);
+		hp.clickOnAccOpenMenu();
+		hp.clickOnEkycMenu();
+		
+		AccountOpeningEkyc ao = new AccountOpeningEkyc(driver);
+		ao.EnterUIDNo("731817444183");
+		
+		ao.clickOnProceedafterUID();				logger.info("** Clicked on Proceed after UID ***");
+		ao.clickOnFpScanner();						logger.info("** Clicked on FP Scanner Button ***");
+		ao.clickOnProceedFpCapture();				logger.info("** Clicked on Proceed Fp Capture ***");
+		ao.clickOnOkButtonPopup();					logger.info("** Clicked on Ok Button Popup ***");
+		ao.clickProceedButtonInitialDetails();		logger.info("** Clicked on Proceed Button Initial Details ***");
+		//ao.selectCity("pune");
+		ao.clickOnCustomerDetailsTab();				logger.info("** Clicked on Customer Details Tab  ***");
+		ao.clickOnCkycDetailsTab();					logger.info("** Clicked on CkycDetails Tab 1***");
+		ao.clickOnCkycDetailsTab();					logger.info("** Clicked on CkycDetails Tab 2 ***");
+		ao.clickOnNomineeDetailsTab();				logger.info("** Clicked on NomineeDetails Tab 1***");
+		ao.clickOnNomineeDetailsTab();				logger.info("** Clicked on NomineeDetails Tab 2***");
+		ao.clickProceedToPreview();					logger.info("** Clicked on Proceed to Preview ***");
+		Thread.sleep(2000);
+		ao.clickProceedToCustAuth();				logger.info("** Clicked on Proceed to CustAuth ***");
+		ao.clickOkAepsConsent();					logger.info("** Clicked on Ok Aeps Consent ***");
+		ao.clickYesPanConsent();					logger.info("** Clicked on Yes Pan Consent ***");
+		ao.clickFpScanCustAuthFinal();				logger.info("** Clicked on Fp Scan CustAuth Final ***");
+		ao.clickFinalProceed();						logger.info("** Clicked on Final Proceed ***");		
+		ao.EnterInitialAmount("251");				logger.info("** Entered Initial Deposit Amount & clicked on proceed***");
+		
+		Assert.assertEquals(ao.VerifySucessMsg(), "Initial Deposit Successful"); 
+	
+		
+		
+	}
+		
+	
+}

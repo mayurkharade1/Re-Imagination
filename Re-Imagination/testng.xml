@@ -6,7 +6,8 @@
   <test  name="Test">
     <classes>
       <!--  <class name="testCases.TC02_ChequeBookIssuance"/>-->
-      <class name="testCases.AccountOpening"/>
+      <class name="testCases.TC03_AadharSeedingDeesing"/>
+       <!-- <class name="testCases.IAO_Continue_Customer_Creation"/> -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -151,8 +151,8 @@ public class AccountOpeningEkyc extends BasePage {
 	public void clickFinalProceed() {
 		js.executeScript("arguments[0].click();",btnFinalProceed);
 	}
-	public void EnterInitialAmount() {
-		txtInitialDepAmount.sendKeys("0");
+	public void EnterInitialAmount(String amt) {
+		txtInitialDepAmount.sendKeys(amt);
 		js.executeScript("arguments[0].click();",btnProceedFromInitialDep);
 	}
 	public String VerifySucessMsg() {

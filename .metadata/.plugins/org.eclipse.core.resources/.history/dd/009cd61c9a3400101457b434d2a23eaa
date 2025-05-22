@@ -1,0 +1,22 @@
+package testCases;
+
+import org.testng.annotations.Test;
+
+import pageObjects.AadharSeedingDeseeding;
+import pageObjects.HomePage;
+import testBase.BaseClass;
+
+public class TC03_AadharSeedingDeesing extends BaseClass
+{
+	HomePage hp = new HomePage(driver);
+	AadharSeedingDeseeding as= new AadharSeedingDeseeding(driver);
+	@Test
+	public void AadharSeeding(){
+		hp.clickOnAadharSeedingMenu();
+		
+		as.EnterUIDtoseeding("731817444183");
+		
+		
+	}
+	
+}
