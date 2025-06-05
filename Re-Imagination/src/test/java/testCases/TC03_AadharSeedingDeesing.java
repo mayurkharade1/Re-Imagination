@@ -1,5 +1,7 @@
 package testCases;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import pageObjects.AadharSeedingDeseeding;
@@ -11,19 +13,35 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 	
 	
 	
-//	//@Test (priority = 2)
-//	public void AadharSeeding(){
-//		//hp.clickOnAadharSeedingMenu();
-//		
-//		as.EnterUIDtoseeding("731817444183");
-//		as.EnterAcctoDeseeding("50003413184");
-//		as.clickOnproceed();
-//			
-//		
-//	}
+	@Test (priority = 2)
+	public void AadharSeeding() throws InterruptedException, IOException{
+		HomePage hp = new HomePage(driver);
+		AadharSeedingDeseeding as= new AadharSeedingDeseeding(driver);
+		hp.clickOnAadharSeedingMenu();
+		
+		as.EnterUIDtoseeding("731817444183");
+		as.EnterAcctoseeding("50003413184");
+		Thread.sleep(2000);
+		as.clickOnproceed();
+		as.EnterAgentPassword("dfi@1234");
+		as.ProceedAgentPassword();
+		as.YesToPanConsent();
+		as.ClickOnCustFpScan();
+		as.ClickOnProceedCustAuth();
+		if(as.ReceiptPage()) {
+			
+			Thread.sleep(3000);
+			as.captureScreen("Seeding");
+			as.clickOnAnotherPayment();
+			
+		}
+		
+		
+	}
 	
-	@Test
-	public void AadharDeSeeding(){
+	
+	@Test (priority = 1)
+	public void AadharDeSeeding() throws InterruptedException, IOException{
 		HomePage hp = new HomePage(driver);
 		AadharSeedingDeseeding as= new AadharSeedingDeseeding(driver);
 		
@@ -31,9 +49,23 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 		as.clickOnDeseedingMenu();
 		as.EnterUIDtoDeseeding("731817444183");
 		as.EnterAcctoDeseeding("50003413184");
+		Thread.sleep(3000);
 		as.clickOnproceed();
 		as.EnterAgentPassword("dfi@1234");
 		as.ProceedAgentPassword();
+		as.YesToPanConsent();
+		as.ClickOnCustFpScan();
+		as.ClickOnProceedCustAuth();
+		
+		if(as.ReceiptPage()) {
+			
+			Thread.sleep(3000);
+			as.captureScreen("DeSeeding");
+			as.clickOnAnotherPayment();
+			
+		}
+		
+		
 			
 		
 	}

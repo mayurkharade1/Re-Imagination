@@ -8,6 +8,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="Login"/>
+          <include name="AadharSeeding"/>
           <include name="AadharDeSeeding"/>
         </methods>
       </class> <!-- testCases.TC03_AadharSeedingDeesing -->

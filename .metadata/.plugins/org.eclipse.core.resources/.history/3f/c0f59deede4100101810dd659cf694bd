@@ -1,0 +1,68 @@
+package testCases;
+
+import org.testng.annotations.Test;
+
+import pageObjects.AadharSeedingDeseeding;
+import pageObjects.HomePage;
+import testBase.BaseClass;
+
+public class TC03_AadharSeedingDeesing extends BaseClass
+{
+	
+	
+	
+	@Test (priority = 1)
+	public void AadharSeeding() throws InterruptedException{
+		HomePage hp = new HomePage(driver);
+		AadharSeedingDeseeding as= new AadharSeedingDeseeding(driver);
+		hp.clickOnAadharSeedingMenu();
+		
+		as.EnterUIDtoseeding("731817444183");
+		as.EnterAcctoseeding("50003413184");
+		Thread.sleep(2000);
+		as.clickOnproceed();
+		as.EnterAgentPassword("dfi@1234");
+		as.ProceedAgentPassword();
+		as.YesToPanConsent();
+		as.ClickOnCustFpScan();
+		as.ClickOnProceedCustAuth();
+//		if(as.ReceiptPage()) {
+//			
+//			Thread.sleep(3000);
+//			as.clickOnAnotherPayment();
+//			
+//		}
+		as.captureScreen();
+		
+	}
+	
+	@Test (priority = 2)
+	public void AadharDeSeeding() throws InterruptedException{
+		HomePage hp = new HomePage(driver);
+		AadharSeedingDeseeding as= new AadharSeedingDeseeding(driver);
+		
+		hp.clickOnAadharSeedingMenu();
+		as.clickOnDeseedingMenu();
+		as.EnterUIDtoDeseeding("731817444183");
+		as.EnterAcctoDeseeding("50003413184");
+		Thread.sleep(3000);
+		as.clickOnproceed();
+		as.EnterAgentPassword("dfi@1234");
+		as.ProceedAgentPassword();
+		as.YesToPanConsent();
+		as.ClickOnCustFpScan();
+		as.ClickOnProceedCustAuth();
+		
+		if(as.ReceiptPage()) {
+			
+			Thread.sleep(3000);
+			as.clickOnAnotherPayment();
+			
+		}
+		
+		
+			
+		
+	}
+	
+}

@@ -28,7 +28,7 @@ public class IAO_Continue_Customer_Creation extends BaseClass{
 		ao.clickOnProceedFpCapture();				logger.info("** Clicked on Proceed Fp Capture ***");
 		ao.clickOnOkButtonPopup();					logger.info("** Clicked on Ok Button Popup ***");
 		ao.clickProceedButtonInitialDetails();		logger.info("** Clicked on Proceed Button Initial Details ***");
-		/*//ao.selectCity("pune");
+		//ao.selectCity("pune");
 		ao.clickOnCustomerDetailsTab();				logger.info("** Clicked on Customer Details Tab  ***");
 		ao.clickOnCkycDetailsTab();					logger.info("** Clicked on CkycDetails Tab 1***");
 		ao.clickOnCkycDetailsTab();					logger.info("** Clicked on CkycDetails Tab 2 ***");
@@ -43,7 +43,7 @@ public class IAO_Continue_Customer_Creation extends BaseClass{
 		ao.clickFinalProceed();						logger.info("** Clicked on Final Proceed ***");		
 		ao.EnterInitialAmount("221");				logger.info("** Entered Initial Deposit Amount & clicked on proceed***");
 		
-		Assert.assertEquals(ao.VerifySucessMsg(), "Initial Deposit Successful");*/
+		Assert.assertEquals(ao.VerifySucessMsg(), "Initial Deposit Successful");
 	} 
 	
 	catch (Exception e) {
