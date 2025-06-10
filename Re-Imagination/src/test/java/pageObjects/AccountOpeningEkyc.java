@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+
+import net.bytebuddy.asm.Advice.Argument;
+
 import org.openqa.selenium.JavascriptExecutor;
 
 public class AccountOpeningEkyc extends BasePage {
@@ -17,6 +20,12 @@ public class AccountOpeningEkyc extends BasePage {
 		super(driver);
 	}
 	
+	//First Page
+	@FindBy(xpath = "//input[@value='Yes']")
+	WebElement btnRadioYes;
+	@FindBy(xpath = "//input[@placeholder='Enter Reference Number']")
+	WebElement txtRefNo;
+	
 	@FindBy(xpath = "//input[@placeholder='Enter Aadhaar Number']")
 	WebElement txUIDno;
 	@FindBy(xpath = "//p[text()='Proceed']")
@@ -25,44 +34,74 @@ public class AccountOpeningEkyc extends BasePage {
 	WebElement btnScannerCustAuth;
 	@FindBy(xpath = "//p[text()='PROCEED']")
 	WebElement btnProceedFpcap;
+	
+	//Reference Number available
 	@FindBy(xpath = "//p[text()='OK']")
 	WebElement btnOKpopup;
+	
+	//Initial Details Page
+	@FindBy(xpath = "//input[@placeholder='Enter Mobile']")
+	WebElement txtMobileNo;
+	@FindBy(xpath = "//img[@alt='Veifyhere']")
+	WebElement btnVerifyMobNo;
+	@FindBy(xpath = "//input[@id='PAN']")
+	WebElement btnPan;
+	@FindBy(xpath = "//input[@placeholder='Enter Pan Number']")
+	WebElement txtPanNo;
+	@FindBy(xpath = "//img[@alt='Veifyhere']")
+	WebElement btnVerifyPanNo;
 	@FindBy(xpath = "//p[text()='Proceed']")
 	WebElement btnProceedInitialDetials;
+	
+	@FindBy(xpath = "//p[text()='PROCEED ']")
+	WebElement btnProceedREFnoGenerated;
+	
+	
+	
+	//Customer Details Section
 	@FindBy(xpath = "//p[text()='Customer Details']")
 	WebElement ArrowCustomerDetails;
-	@FindBy(xpath = "//p[text()='CKYC Details']")
-	WebElement ArrowCkycDetails;
-	@FindBy(xpath = "//p[text()='NOMINEE DETAILS']")
-	WebElement ArrowNomineeDetails;
-	
 	@FindBy(xpath = "//input[@id='react-select-5-input']")
 	WebElement CityDropdown;
 	@FindBy(xpath = "//div[@id='react-select-6-placeholder']")
 	WebElement SubDistDropdown;
 	@FindBy(xpath = "//input[@id='react-select-7-input']")
 	WebElement VillageDropdown;
+	
+	//Ckyc Details Section
+	@FindBy(xpath = "//p[text()='CKYC Details']")
+	WebElement ArrowCkycDetails;
+	
+	//Nominee Details Section
+	@FindBy(xpath = "//p[text()='NOMINEE DETAILS']")
+	WebElement ArrowNomineeDetails;
+	
+	
+	
 	@FindBy(xpath = "//p[text()='Proceed']")
 	WebElement btnOKtoPreview;
 	@FindBy(xpath = "//p[text()='Customer Details']")
 	WebElement ArrowCustomerDetailsPreview;
-	
 	@FindBy(xpath = "//p[text()='Proceed']")
 	WebElement btnProceedfromPreview;
-	
 	@FindBy(xpath = "//p[text()='OK']")
 	WebElement btnOkAepsConsent;
 	@FindBy(xpath = "//button[text()='YES, I DO']")
 	WebElement btnPanConsentConsent;
+	
+	//Customer Authentication Page
 	@FindBy(xpath = "//img[@alt='FingerprintFirstNew']")
 	WebElement btnScannerCutAuthFinal;
-	
 	@FindBy(xpath = "//p[text()='PROCEED']")
 	WebElement btnFinalProceed;
+	
+	//Initial Deposit Page
 	@FindBy(xpath = "//input[@placeholder='Enter Amount']")
 	WebElement txtInitialDepAmount; 	
 	@FindBy(xpath = "//p[text()='Proceed']")
 	WebElement btnProceedFromInitialDep;	
+	
+	//Receipt Page
 	@FindBy(xpath = "//p[text()='Initial Deposit Successful']")
 	WebElement initialDepSMsg;
 	@FindBy(xpath = "//p[text()='GENERATE FORM']")
@@ -71,6 +110,14 @@ public class AccountOpeningEkyc extends BasePage {
 	WebElement btnPrintReceipt;
 	
 	
+	//First Page Actions
+	public void clickOnYesRadioBtnToInputRefNo() {
+		//btnRadioYes.click();
+		js.executeScript("arguments[0].click()", btnRadioYes);
+	}
+	public void EnterAORefNo(String RefNo) {
+		txtRefNo.sendKeys(RefNo);
+	}
 	public void EnterUIDNo(String UID) {
 		txUIDno.sendKeys(UID);
 	}

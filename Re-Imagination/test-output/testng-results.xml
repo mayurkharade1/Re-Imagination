@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-05T15:01:43 IST" name="Suite" finished-at="2025-06-05T15:03:20 IST" duration-ms="96963">
+  <suite started-at="2025-06-10T11:21:36 IST" name="Suite" finished-at="2025-06-10T11:23:58 IST" duration-ms="141447">
     <groups>
     </groups>
-    <test started-at="2025-06-05T15:01:43 IST" name="Test" finished-at="2025-06-05T15:03:20 IST" duration-ms="96963">
+    <test started-at="2025-06-10T11:21:36 IST" name="Test" finished-at="2025-06-10T11:23:58 IST" duration-ms="141447">
       <class name="testCases.TC03_AadharSeedingDeesing">
-        <test-method is-config="true" signature="Login(java.lang.String)[pri:0, instance:testCases.TC03_AadharSeedingDeesing@426b6a74]" started-at="2025-06-05T15:01:43 IST" name="Login" finished-at="2025-06-05T15:02:12 IST" duration-ms="28934" status="PASS">
+        <test-method is-config="true" signature="Login(java.lang.String)[pri:0, instance:testCases.TC03_AadharSeedingDeesing@6d24ffa1]" started-at="2025-06-10T11:21:36 IST" name="Login" finished-at="2025-06-10T11:22:44 IST" duration-ms="67540" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="AadharDeSeeding()[pri:1, instance:testCases.TC03_AadharSeedingDeesing@426b6a74]" started-at="2025-06-05T15:02:12 IST" name="AadharDeSeeding" finished-at="2025-06-05T15:02:48 IST" duration-ms="36283" status="PASS">
+        <test-method signature="AadharDeSeeding()[pri:1, instance:testCases.TC03_AadharSeedingDeesing@6d24ffa1]" started-at="2025-06-10T11:22:44 IST" name="AadharDeSeeding" finished-at="2025-06-10T11:23:25 IST" duration-ms="41226" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AadharDeSeeding -->
-        <test-method signature="AadharSeeding()[pri:2, instance:testCases.TC03_AadharSeedingDeesing@426b6a74]" started-at="2025-06-05T15:02:48 IST" name="AadharSeeding" finished-at="2025-06-05T15:03:20 IST" duration-ms="31672" status="PASS">
+        <test-method signature="AadharSeeding()[pri:2, instance:testCases.TC03_AadharSeedingDeesing@6d24ffa1]" started-at="2025-06-10T11:23:25 IST" name="AadharSeeding" finished-at="2025-06-10T11:23:58 IST" duration-ms="32605" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AadharSeeding -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC03_AadharSeedingDeesing@426b6a74]" started-at="2025-06-05T15:03:20 IST" name="tearDown" finished-at="2025-06-05T15:03:20 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC03_AadharSeedingDeesing@6d24ffa1]" started-at="2025-06-10T11:23:58 IST" name="tearDown" finished-at="2025-06-10T11:23:58 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

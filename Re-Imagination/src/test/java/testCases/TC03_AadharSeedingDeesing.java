@@ -21,7 +21,7 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 		
 		as.EnterUIDtoseeding("731817444183");
 		as.EnterAcctoseeding("50003413184");
-		Thread.sleep(2000);
+			Thread.sleep(3000);
 		as.clickOnproceed();
 		as.EnterAgentPassword("dfi@1234");
 		as.ProceedAgentPassword();
@@ -29,9 +29,8 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 		as.ClickOnCustFpScan();
 		as.ClickOnProceedCustAuth();
 		if(as.ReceiptPage()) {
-			
-			Thread.sleep(3000);
 			as.captureScreen("Seeding");
+			Thread.sleep(3000);
 			as.clickOnAnotherPayment();
 			
 		}
@@ -49,7 +48,7 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 		as.clickOnDeseedingMenu();
 		as.EnterUIDtoDeseeding("731817444183");
 		as.EnterAcctoDeseeding("50003413184");
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		as.clickOnproceed();
 		as.EnterAgentPassword("dfi@1234");
 		as.ProceedAgentPassword();
@@ -58,9 +57,8 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 		as.ClickOnProceedCustAuth();
 		
 		if(as.ReceiptPage()) {
-			
-			Thread.sleep(3000);
 			as.captureScreen("DeSeeding");
+			Thread.sleep(3000);		
 			as.clickOnAnotherPayment();
 			
 		}
