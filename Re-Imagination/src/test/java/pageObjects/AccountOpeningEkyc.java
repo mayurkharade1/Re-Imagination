@@ -1,12 +1,19 @@
 package pageObjects;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import net.bytebuddy.asm.Advice.Argument;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.openqa.selenium.JavascriptExecutor;
 
@@ -18,6 +25,22 @@ public class AccountOpeningEkyc extends BasePage {
 	public AccountOpeningEkyc(WebDriver driver) 
 	{
 		super(driver);
+	}
+	
+	public String captureScreen(String tname) throws IOException {
+
+		String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+
+		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+
+		String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" + tname + "_" + timeStamp + ".png";
+		File targetFile=new File(targetFilePath);
+
+		sourceFile.renameTo(targetFile);
+
+		return targetFilePath;
+
 	}
 	
 	//First Page
@@ -40,6 +63,7 @@ public class AccountOpeningEkyc extends BasePage {
 	WebElement btnOKpopup;
 	
 	//Initial Details Page
+	
 	@FindBy(xpath = "//input[@placeholder='Enter Mobile']")
 	WebElement txtMobileNo;
 	@FindBy(xpath = "//img[@alt='Veifyhere']")
@@ -52,29 +76,126 @@ public class AccountOpeningEkyc extends BasePage {
 	WebElement btnVerifyPanNo;
 	@FindBy(xpath = "//p[text()='Proceed']")
 	WebElement btnProceedInitialDetials;
-	
+		//Click ok when precheck complets
+	@FindBy(xpath = "//p[contains(text(),'Your account opening request is successfully initiated.')]")
+	WebElement msgPrecheckSuccess;
 	@FindBy(xpath = "//p[text()='PROCEED ']")
 	WebElement btnProceedREFnoGenerated;
+	
 	
 	
 	
 	//Customer Details Section
 	@FindBy(xpath = "//p[text()='Customer Details']")
 	WebElement ArrowCustomerDetails;
-	@FindBy(xpath = "//input[@id='react-select-5-input']")
+	@FindBy(xpath = "//input[@id='react-select-6-input']")
 	WebElement CityDropdown;
-	@FindBy(xpath = "//div[@id='react-select-6-placeholder']")
+	
+	@FindBy(xpath = "//div[@id='react-select-7-placeholder']")
 	WebElement SubDistDropdown;
-	@FindBy(xpath = "//input[@id='react-select-7-input']")
+	@FindBy(xpath = "//input[@placeholder='Enter Village/Town/Taluka']")
 	WebElement VillageDropdown;
+	
+	@FindBy(xpath = "//input[@placeholder='Enter Pincode']")
+	WebElement txtPincode;
+	@FindBy(xpath = "//input[@placeholder='Enter Place of Birth']")
+	WebElement txtPlaceOfBirth;
+	@FindBy(xpath = "	")
+	WebElement drpReligion;
+	@FindBy(xpath = "//input[@id='react-select-9-input']")
+	WebElement drpCaste;
+	@FindBy(xpath = "//input[@id='react-select-10-input']")
+	WebElement drpMaritalStatus;
+	@FindBy(xpath = "//input[@id='react-select-11-input']")
+	WebElement drpEduQualif;
+	
+	@FindBy(xpath = "//input[@id='react-select-12-input']")
+	WebElement drpFatherMother;
+	
+	@FindBy(xpath = "//input[@placeholder='Enter First Name']")
+	WebElement txtFatherFirst;
+	@FindBy(xpath = "//input[@placeholder='Enter Middle Name']")
+	WebElement txtFatherMiddle;
+	@FindBy(xpath = "//input[@placeholder='Enter Last Name']")
+	WebElement txtFatherLast;
+	@FindBy(xpath = "//input[@placeholder='Enter Mother First Name']")
+	WebElement txtMotherFirst;
+	@FindBy(xpath = "//input[@placeholder='Enter Mother's Middle Name']")
+	WebElement txtMotherMiddle;
+	@FindBy(xpath = "//input[@placeholder='Enter Mother Last Name']")
+	WebElement txtMotherLast;
+	
+	@FindBy(xpath = "//input[@id='react-select-13-input']")
+	WebElement drpNoOfDepend;
+	@FindBy(xpath = "//input[@id='react-select-14-input']")
+	WebElement drpOccType;
+	@FindBy(xpath = "//input[@id='react-select-15-input']")
+	WebElement drpOccSubType;
+	@FindBy(xpath = "//input[@id='react-select-16-input']")
+	WebElement drpAnySBIAcc;
+	@FindBy(xpath = "//input[@id='react-select-17-input']")
+	WebElement drpSourceFund;
+	
+	@FindBy(xpath = "//input[@placeholder='Enter Agriculture Income']")
+	WebElement txtAgriIncome;
+	@FindBy(xpath = "//input[@placeholder='Enter Other Than Agriculture Per Annum']")
+	WebElement txtOtherIncome;
+		//Pan Applied
+	@FindBy(xpath = "//input[@name='applied'][@value='Yes']")
+	WebElement rdPanApplyYes;
+	@FindBy(xpath = "//input[@name='applied'][@value='No']")
+	WebElement rdPanApplyNo;
+		//ATM Require
+	@FindBy(xpath = "//input[@name='options'][@value='Yes']")
+	WebElement rdAtmRequireYes;
+	@FindBy(xpath = "//input[@name='options'][@value='No']")
+	WebElement rdAtmRequireNo;
 	
 	//Ckyc Details Section
 	@FindBy(xpath = "//p[text()='CKYC Details']")
 	WebElement ArrowCkycDetails;
+	@FindBy(xpath = "//input[@id='react-select-21-input']")
+	WebElement drpCkycOccup;
 	
 	//Nominee Details Section
 	@FindBy(xpath = "//p[text()='NOMINEE DETAILS']")
 	WebElement ArrowNomineeDetails;
+	@FindBy(xpath = "//div[@class='container']/input[@type='checkbox']")
+	WebElement chkNomineeYes;
+	@FindBy(xpath = "//div[@class='row']//input[@type='checkbox']")
+	WebElement chkNomineeAddSameAsCustomer;
+	
+	@FindBy(xpath = "//input[@placeholder='Enter Nominee Name']")
+	WebElement txtNomiName;
+	@FindBy(xpath = "//input[@placeholder='Enter Nominee Address']")
+	WebElement txtNomiAdd;
+	@FindBy(xpath = "//input[@placeholder='Enter Nominee Address 2']")
+	WebElement txtNomiAdd2;
+	@FindBy(xpath = "//input[@id='react-select-22-placeholder']")
+	WebElement drpNomiRelation;
+			//Nominee Date from Calendar - Pending
+	@FindBy(xpath = "//button[@aria-label='Choose date']")
+	WebElement btnCalender;
+	
+	////button[@aria-label='calendar view is open, switch to year view']
+	
+	@FindBy(xpath = "//button[@aria-label='Previous month']")
+	WebElement btnPreviewMonth;
+	@FindBy(xpath = "//input[@placeholder='Enter Nominee Mobile Number']")
+	WebElement txtNomiMobNo;
+	@FindBy(xpath = "//input[@placeholder='Enter Guardian Name of the Nominee']")
+	WebElement txtGaurdianName;
+	//Gaurdian DOB - Pending
+	@FindBy(xpath = "//input[@id='react-select-23-input']")
+	WebElement drpNomiRelationWithgaurdian;
+	@FindBy(xpath = "")  //Pending
+	WebElement chkGaurdianAddSameNomineeAdd;
+	@FindBy(xpath = "//label[text()='Guardian Address 1']")
+	WebElement txtGaurdinAdd1;
+	@FindBy(xpath = "//label[text()='Guardian Address 2']")
+	WebElement txtGaurdinAdd2;
+	
+	
 	
 	
 	
@@ -116,12 +237,13 @@ public class AccountOpeningEkyc extends BasePage {
 		js.executeScript("arguments[0].click()", btnRadioYes);
 	}
 	public void EnterAORefNo(String RefNo) {
-		txtRefNo.sendKeys(RefNo);
+		//txtRefNo.sendKeys(RefNo);
+		js.executeScript("arguments[0].setAttribute('value',RefNo)", txtRefNo);
 	}
 	public void EnterUIDNo(String UID) {
 		txUIDno.sendKeys(UID);
 	}
-	public void clickOnProceedafterUID() {
+	public void clickOnProceedafterUIDorRefNo() {
 		btnProceed.click();
 	}
 	public void clickOnFpScanner() {
@@ -133,10 +255,39 @@ public class AccountOpeningEkyc extends BasePage {
 	public void clickOnOkButtonPopup() {
 		btnOKpopup.click();
 	}
+	
+	//Initial Details Page - Actions
+	public void enterMobileNo(String MobNo) {
+		txtMobileNo.sendKeys(MobNo);
+	}
+	public void verifyMobileNo() {
+		btnVerifyMobNo.click();
+	}
+	public void clickPanFlowRadioBtn() {
+		btnPan.click();
+	}
+	public void enterPanNo(String PanNo) {
+		txtPanNo.sendKeys(PanNo);
+	}
+	public void verifyPanNo(){
+		btnVerifyPanNo.click();
+	}
 	public void clickProceedButtonInitialDetails() {
 		btnProceedInitialDetials.click();
 	}
+	public void clickOkbtnIfPrecheckMsgShows() {
+		boolean msg =msgPrecheckSuccess.isDisplayed();
+		if(msg) {
+			btnProceedREFnoGenerated.click();
+		}
+		else {
+			
+		}
+	}
 	
+	
+	
+	// Customer Details Actions
 	public void selectCity(String City) {
 		//CityDropdown.click();
 		CityDropdown.sendKeys(City);

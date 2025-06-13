@@ -1,5 +1,7 @@
 package testCases;
 
+import org.testng.Assert;
+
 import java.io.IOException;
 
 import org.testng.annotations.Test;
@@ -13,7 +15,7 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 	
 	
 	
-	@Test (priority = 2)
+	@Test (priority = 1)
 	public void AadharSeeding() throws InterruptedException, IOException{
 		HomePage hp = new HomePage(driver);
 		AadharSeedingDeseeding as= new AadharSeedingDeseeding(driver);
@@ -32,6 +34,7 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 			as.captureScreen("Seeding");
 			Thread.sleep(3000);
 			as.clickOnAnotherPayment();
+			Assert.assertTrue(true);
 			
 		}
 		
@@ -39,7 +42,7 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 	}
 	
 	
-	@Test (priority = 1)
+	@Test (priority = 2)
 	public void AadharDeSeeding() throws InterruptedException, IOException{
 		HomePage hp = new HomePage(driver);
 		AadharSeedingDeseeding as= new AadharSeedingDeseeding(driver);
@@ -60,6 +63,7 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 			as.captureScreen("DeSeeding");
 			Thread.sleep(3000);		
 			as.clickOnAnotherPayment();
+			Assert.assertTrue(true);
 			
 		}
 		

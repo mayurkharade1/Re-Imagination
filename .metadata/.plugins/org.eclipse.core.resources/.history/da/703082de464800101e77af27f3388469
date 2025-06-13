@@ -1,0 +1,272 @@
+package pageObjects;
+
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+
+import net.bytebuddy.asm.Advice.Argument;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.openqa.selenium.JavascriptExecutor;
+
+public class AccountOpeningEkyc extends BasePage {
+
+	Actions act= new Actions(driver);
+	JavascriptExecutor js=(JavascriptExecutor) driver;
+	
+	public AccountOpeningEkyc(WebDriver driver) 
+	{
+		super(driver);
+	}
+	
+	public String captureScreen(String tname) throws IOException {
+
+		String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+
+		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+
+		String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" + tname + "_" + timeStamp + ".png";
+		File targetFile=new File(targetFilePath);
+
+		sourceFile.renameTo(targetFile);
+
+		return targetFilePath;
+
+	}
+	
+	//First Page
+	@FindBy(xpath = "//input[@value='Yes']")
+	WebElement btnRadioYes;
+	@FindBy(xpath = "//input[@placeholder='Enter Reference Number']")
+	WebElement txtRefNo;
+	
+	@FindBy(xpath = "//input[@placeholder='Enter Aadhaar Number']")
+	WebElement txUIDno;
+	@FindBy(xpath = "//p[text()='Proceed']")
+	WebElement btnProceed;
+	@FindBy(xpath = "//img[@alt='FingerprintFirstNew']")
+	WebElement btnScannerCustAuth;
+	@FindBy(xpath = "//p[text()='PROCEED']")
+	WebElement btnProceedFpcap;
+	
+	//Reference Number available
+	@FindBy(xpath = "//p[text()='OK']")
+	WebElement btnOKpopup;
+	
+	//Initial Details Page
+	
+	@FindBy(xpath = "//input[@placeholder='Enter Mobile']")
+	WebElement txtMobileNo;
+	@FindBy(xpath = "//img[@alt='Veifyhere']")
+	WebElement btnVerifyMobNo;
+	@FindBy(xpath = "//input[@id='PAN']")
+	WebElement btnPan;
+	@FindBy(xpath = "//input[@placeholder='Enter Pan Number']")
+	WebElement txtPanNo;
+	@FindBy(xpath = "//img[@alt='Veifyhere']")
+	WebElement btnVerifyPanNo;
+	@FindBy(xpath = "//p[text()='Proceed']")
+	WebElement btnProceedInitialDetials;
+		//Click ok when precheck complets
+	@FindBy(xpath = "//p[contains(text(),'Your account opening request is successfully initiated.')]")
+	WebElement msgPrecheckSuccess;
+	@FindBy(xpath = "//p[text()='PROCEED ']")
+	WebElement btnProceedREFnoGenerated;
+	
+	
+	
+	
+	//Customer Details Section
+	@FindBy(xpath = "//p[text()='Customer Details']")
+	WebElement ArrowCustomerDetails;
+	@FindBy(xpath = "//input[@id='react-select-6-input']")
+	WebElement CityDropdown;
+	
+	@FindBy(xpath = "//div[@id='react-select-7-placeholder']")
+	WebElement SubDistDropdown;
+	@FindBy(xpath = "//input[@placeholder='Enter Village/Town/Taluka']")
+	WebElement VillageDropdown;
+	
+	@FindBy(xpath = "//input[@placeholder='Enter Pincode']")
+	WebElement txtPincode;
+	@FindBy(xpath = "//input[@placeholder='Enter Place of Birth']")
+	WebElement txtPlaceOfBirth;
+	@FindBy(xpath = "	")
+	WebElement drpReligion;
+	@FindBy(xpath = "//input[@id='react-select-9-input']")
+	WebElement drpCaste;
+	@FindBy(xpath = "//input[@id='react-select-10-input']")
+	WebElement drpMaritalStatus;
+	@FindBy(xpath = "//input[@id='react-select-11-input']")
+	WebElement drpEduQualif;
+	@FindBy(xpath = "//input[@id='react-select-12-input']")
+	WebElement drpFatherMother;
+	
+	//Ckyc Details Section
+	@FindBy(xpath = "//p[text()='CKYC Details']")
+	WebElement ArrowCkycDetails;
+	
+	//Nominee Details Section
+	@FindBy(xpath = "//p[text()='NOMINEE DETAILS']")
+	WebElement ArrowNomineeDetails;
+	
+	
+	
+	@FindBy(xpath = "//p[text()='Proceed']")
+	WebElement btnOKtoPreview;
+	@FindBy(xpath = "//p[text()='Customer Details']")
+	WebElement ArrowCustomerDetailsPreview;
+	@FindBy(xpath = "//p[text()='Proceed']")
+	WebElement btnProceedfromPreview;
+	@FindBy(xpath = "//p[text()='OK']")
+	WebElement btnOkAepsConsent;
+	@FindBy(xpath = "//button[text()='YES, I DO']")
+	WebElement btnPanConsentConsent;
+	
+	//Customer Authentication Page
+	@FindBy(xpath = "//img[@alt='FingerprintFirstNew']")
+	WebElement btnScannerCutAuthFinal;
+	@FindBy(xpath = "//p[text()='PROCEED']")
+	WebElement btnFinalProceed;
+	
+	//Initial Deposit Page
+	@FindBy(xpath = "//input[@placeholder='Enter Amount']")
+	WebElement txtInitialDepAmount; 	
+	@FindBy(xpath = "//p[text()='Proceed']")
+	WebElement btnProceedFromInitialDep;	
+	
+	//Receipt Page
+	@FindBy(xpath = "//p[text()='Initial Deposit Successful']")
+	WebElement initialDepSMsg;
+	@FindBy(xpath = "//p[text()='GENERATE FORM']")
+	WebElement btnGenerateForm;
+	@FindBy(xpath = "//p[text()='Print Receipt']")
+	WebElement btnPrintReceipt;
+	
+	
+	//First Page Actions
+	public void clickOnYesRadioBtnToInputRefNo() {
+		//btnRadioYes.click();
+		js.executeScript("arguments[0].click()", btnRadioYes);
+	}
+	public void EnterAORefNo(String RefNo) {
+		//txtRefNo.sendKeys(RefNo);
+		js.executeScript("arguments[0].setAttribute('value',RefNo)", txtRefNo);
+	}
+	public void EnterUIDNo(String UID) {
+		txUIDno.sendKeys(UID);
+	}
+	public void clickOnProceedafterUID() {
+		btnProceed.click();
+	}
+	public void clickOnFpScanner() {
+		btnScannerCustAuth.click();
+	}
+	public void clickOnProceedFpCapture() {
+		btnProceedFpcap.click();
+	}
+	public void clickOnOkButtonPopup() {
+		btnOKpopup.click();
+	}
+	public void clickProceedButtonInitialDetails() {
+		btnProceedInitialDetials.click();
+	}
+	
+	public void selectCity(String City) {
+		//CityDropdown.click();
+		CityDropdown.sendKeys(City);
+		act.keyDown(Keys.ENTER).keyUp(Keys.ENTER).perform();
+
+	}
+	
+	public void selectSubDistrict(String SubDistrict) {
+		SubDistDropdown.click();
+		SubDistDropdown.sendKeys(SubDistrict);
+		act.keyDown(Keys.ENTER).keyUp(Keys.ENTER).perform();
+
+	}
+	
+	public void selectVillage(String Village) {
+		VillageDropdown.click();
+		VillageDropdown.sendKeys(Village);
+		act.keyDown(Keys.ENTER).keyUp(Keys.ENTER).perform();
+
+	}
+	public void clickOnCustomerDetailsTab() {
+		ArrowCustomerDetails.click();
+	}
+	public void clickOnCkycDetailsTab() {
+		
+		js.executeScript("arguments[0].scrollIntoView();", ArrowCkycDetails);
+		//ArrowCkycDetails.click();
+		js.executeScript("arguments[0].click();",ArrowCkycDetails);
+	}
+	public void clickOnNomineeDetailsTab() {
+		js.executeScript("arguments[0].scrollIntoView();", ArrowNomineeDetails);
+		//ArrowNomineeDetails.click();
+		js.executeScript("arguments[0].click();",ArrowNomineeDetails);
+	}
+	public void clickProceedToPreview() {
+		js.executeScript("arguments[0].click();",btnOKtoPreview);
+	}
+	
+	public void clickCustDetailsPreview() {
+		js.executeScript("arguments[0].click();",ArrowCustomerDetailsPreview);
+	}
+	
+	public void clickProceedToCustAuth() {
+		//js.executeScript("window.scrollBy(0,document.body.scrollHeight)"); //Scrolling to down
+		js.executeScript("arguments[0].click();",ArrowCustomerDetailsPreview);
+		js.executeScript("arguments[0].click();",btnProceedfromPreview);
+	}
+	
+	
+	public void clickOkAepsConsent() {
+		js.executeScript("arguments[0].click();",btnOkAepsConsent);
+	}
+	public void clickYesPanConsent() {
+		js.executeScript("arguments[0].click();",btnPanConsentConsent);
+	}
+	public void clickFpScanCustAuthFinal() {
+		js.executeScript("arguments[0].click();",btnScannerCutAuthFinal);
+	}
+	public void clickFinalProceed() {
+		js.executeScript("arguments[0].click();",btnFinalProceed);
+	}
+	public void EnterInitialAmount(String amt) {
+		txtInitialDepAmount.sendKeys(amt);
+		js.executeScript("arguments[0].click();",btnProceedFromInitialDep);
+	}
+	public String VerifySucessMsg() {
+		String msg=initialDepSMsg.getText();
+		return msg;
+		
+	}
+	public void generateForm()
+	{
+		//js.executeScript("arguments[0].click();",btnGenerateForm);
+		btnGenerateForm.click();
+	}
+	public void printReceipt()
+	{
+		//js.executeScript("arguments[0].click();",btnPrintReceipt);
+		btnPrintReceipt.click();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}

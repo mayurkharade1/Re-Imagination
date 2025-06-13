@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-10T11:21:36 IST" name="Suite" finished-at="2025-06-10T11:23:58 IST" duration-ms="141447">
+  <suite started-at="2025-06-13T17:18:28 IST" name="Suite" finished-at="2025-06-13T17:21:26 IST" duration-ms="178117">
     <groups>
     </groups>
-    <test started-at="2025-06-10T11:21:36 IST" name="Test" finished-at="2025-06-10T11:23:58 IST" duration-ms="141447">
-      <class name="testCases.TC03_AadharSeedingDeesing">
-        <test-method is-config="true" signature="Login(java.lang.String)[pri:0, instance:testCases.TC03_AadharSeedingDeesing@6d24ffa1]" started-at="2025-06-10T11:21:36 IST" name="Login" finished-at="2025-06-10T11:22:44 IST" duration-ms="67540" status="PASS">
+    <test started-at="2025-06-13T17:18:28 IST" name="Test" finished-at="2025-06-13T17:21:26 IST" duration-ms="178117">
+      <class name="testCases.IAO_Continue_Customer_Creation">
+        <test-method is-config="true" signature="Login(java.lang.String)[pri:0, instance:testCases.IAO_Continue_Customer_Creation@878452d]" started-at="2025-06-13T17:18:28 IST" name="Login" finished-at="2025-06-13T17:19:43 IST" duration-ms="75451" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,19 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="AadharDeSeeding()[pri:1, instance:testCases.TC03_AadharSeedingDeesing@6d24ffa1]" started-at="2025-06-10T11:22:44 IST" name="AadharDeSeeding" finished-at="2025-06-10T11:23:25 IST" duration-ms="41226" status="PASS">
+        <test-method signature="Ekyc_Enrollment()[pri:0, instance:testCases.IAO_Continue_Customer_Creation@878452d]" started-at="2025-06-13T17:19:43 IST" name="Ekyc_Enrollment" finished-at="2025-06-13T17:21:26 IST" duration-ms="102589" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AadharDeSeeding -->
-        <test-method signature="AadharSeeding()[pri:2, instance:testCases.TC03_AadharSeedingDeesing@6d24ffa1]" started-at="2025-06-10T11:23:25 IST" name="AadharSeeding" finished-at="2025-06-10T11:23:58 IST" duration-ms="32605" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AadharSeeding -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC03_AadharSeedingDeesing@6d24ffa1]" started-at="2025-06-10T11:23:58 IST" name="tearDown" finished-at="2025-06-10T11:23:58 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- Ekyc_Enrollment -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.IAO_Continue_Customer_Creation@878452d]" started-at="2025-06-13T17:21:26 IST" name="tearDown" finished-at="2025-06-13T17:21:26 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC03_AadharSeedingDeesing -->
+      </class> <!-- testCases.IAO_Continue_Customer_Creation -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

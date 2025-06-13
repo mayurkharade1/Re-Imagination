@@ -23,12 +23,12 @@ public class IAO_Continue_Customer_Creation extends BaseClass{
 		AccountOpeningEkyc ao = new AccountOpeningEkyc(driver);
 		ao.EnterUIDNo("731817444183");
 		
-		ao.clickOnProceedafterUID();				logger.info("** Clicked on Proceed after UID ***");
+		ao.clickOnProceedafterUIDorRefNo();				logger.info("** Clicked on Proceed after UID ***");
 		ao.clickOnFpScanner();						logger.info("** Clicked on FP Scanner Button ***");
 		ao.clickOnProceedFpCapture();				logger.info("** Clicked on Proceed Fp Capture ***");
 		ao.clickOnOkButtonPopup();					logger.info("** Clicked on Ok Button Popup ***");
+		ao.captureScreen("InitialDetailPage");
 		ao.clickProceedButtonInitialDetails();		logger.info("** Clicked on Proceed Button Initial Details ***");
-		//ao.selectCity("pune");
 		ao.clickOnCustomerDetailsTab();				logger.info("** Clicked on Customer Details Tab  ***");
 		ao.clickOnCkycDetailsTab();					logger.info("** Clicked on CkycDetails Tab 1***");
 		ao.clickOnCkycDetailsTab();					logger.info("** Clicked on CkycDetails Tab 2 ***");
@@ -42,7 +42,11 @@ public class IAO_Continue_Customer_Creation extends BaseClass{
 		ao.clickFpScanCustAuthFinal();				logger.info("** Clicked on Fp Scan CustAuth Final ***");
 		ao.clickFinalProceed();						logger.info("** Clicked on Final Proceed ***");		
 		ao.EnterInitialAmount("221");				logger.info("** Entered Initial Deposit Amount & clicked on proceed***");
-		
+		if (ao.VerifySucessMsg().equalsIgnoreCase("Initial Deposit Successful"))
+		{
+			ao.captureScreen("Ao_Receipt");
+			//Assert.assertTrue(true);
+		}
 		Assert.assertEquals(ao.VerifySucessMsg(), "Initial Deposit Successful");
 	} 
 	
