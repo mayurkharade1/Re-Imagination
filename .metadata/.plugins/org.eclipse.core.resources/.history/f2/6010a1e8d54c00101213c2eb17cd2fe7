@@ -1,0 +1,79 @@
+package testCases;
+
+import org.testng.Assert;
+
+import java.io.IOException;
+
+import org.testng.annotations.Test;
+
+import pageObjects.AadharSeedingDeseeding;
+import pageObjects.HomePage;
+import testBase.BaseClass;
+
+public class TC03_AadharSeedingDeesing extends BaseClass
+{
+	HomePage hp;
+	AdharSeedingDeseeding as;
+	
+	
+	@Test (priority = 1)
+	public void AadharSeeding() throws InterruptedException, IOException{
+		 hp = new HomePage(driver);
+		AadharSeedingDeseeding as= new AadharSeedingDeseeding(driver);
+		
+		hp.clickOnAadharSeedingMenu();
+		
+		as.EnterUIDtoseeding(p.getProperty("SeedingUid"));
+		as.EnterAcctoseeding(p.getProperty("SeedingAcctNo"));
+			Thread.sleep(3000);
+		as.clickOnproceed();
+		as.EnterAgentPassword(p.getProperty("AgentTxnPassword"));
+		as.ProceedAgentPassword();
+		as.YesToPanConsent();
+		as.ClickOnCustFpScan();
+		as.ClickOnProceedCustAuth();
+		if(as.ReceiptPage()) {
+			captureScreen("Seeding");
+			Thread.sleep(3000);
+			as.clickOnAnotherPayment();
+			Assert.assertTrue(true);
+			
+		}
+		
+		
+	}
+	
+	
+	@Test (priority = 2)
+	public void AadharDeSeeding() throws InterruptedException, IOException{
+		HomePage hp = new HomePage(driver);
+		AadharSeedingDeseeding as= new AadharSeedingDeseeding(driver);
+		
+		hp.clickOnAadharSeedingMenu();
+		as.clickOnDeseedingMenu();
+		//as.EnterUIDtoDeseeding("731817444183");
+		as.EnterUIDtoDeseeding(p.getProperty("SeedingUid"));
+		as.EnterAcctoDeseeding(p.getProperty("SeedingAcctNo"));
+		//as.captureScreen("Page");
+		Thread.sleep(2000);
+		as.clickOnproceed();
+		as.EnterAgentPassword(p.getProperty("AgentTxnPassword"));
+		as.ProceedAgentPassword();
+		as.YesToPanConsent();
+		as.ClickOnCustFpScan();
+		as.ClickOnProceedCustAuth();
+		
+		if(as.ReceiptPage()) {
+			captureScreen("DeSeeding");
+			Thread.sleep(3000);		
+			as.clickOnAnotherPayment();
+			Assert.assertTrue(true);
+			
+		}
+		
+		
+			
+		
+	}
+	
+}

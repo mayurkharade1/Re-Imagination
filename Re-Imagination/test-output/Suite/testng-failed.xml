@@ -4,14 +4,13 @@
   <parameter name="browser" value="chrome"/>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testCases.TC03_AadharSeedingDeesing">
+      <class name="testCases.IAO_New_Customer_Enrollment">
         <methods>
           <include name="tearDown"/>
           <include name="Login"/>
-          <include name="AadharSeeding"/>
-          <include name="AadharDeSeeding"/>
+          <include name="Ekyc_Enrollment"/>
         </methods>
-      </class> <!-- testCases.TC03_AadharSeedingDeesing -->
+      </class> <!-- testCases.IAO_New_Customer_Enrollment -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

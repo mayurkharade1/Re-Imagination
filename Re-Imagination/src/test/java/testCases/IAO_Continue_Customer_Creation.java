@@ -41,11 +41,11 @@ public class IAO_Continue_Customer_Creation extends BaseClass{
 		ao.clickYesPanConsent();					logger.info("** Clicked on Yes Pan Consent ***");
 		ao.clickFpScanCustAuthFinal();				logger.info("** Clicked on Fp Scan CustAuth Final ***");
 		ao.clickFinalProceed();						logger.info("** Clicked on Final Proceed ***");		
-		ao.EnterInitialAmount("221");				logger.info("** Entered Initial Deposit Amount & clicked on proceed***");
+		ao.EnterInitialAmount("0");					logger.info("** Entered Initial Deposit Amount & clicked on proceed***");
 		if (ao.VerifySucessMsg().equalsIgnoreCase("Initial Deposit Successful"))
 		{
 			ao.captureScreen("Ao_Receipt");
-			//Assert.assertTrue(true);
+			Assert.assertTrue(true);
 		}
 		Assert.assertEquals(ao.VerifySucessMsg(), "Initial Deposit Successful");
 	} 

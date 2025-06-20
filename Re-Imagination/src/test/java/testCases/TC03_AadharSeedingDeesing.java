@@ -12,26 +12,28 @@ import testBase.BaseClass;
 
 public class TC03_AadharSeedingDeesing extends BaseClass
 {
-	
+	HomePage hp;
+	AadharSeedingDeseeding as;
 	
 	
 	@Test (priority = 1)
 	public void AadharSeeding() throws InterruptedException, IOException{
-		HomePage hp = new HomePage(driver);
-		AadharSeedingDeseeding as= new AadharSeedingDeseeding(driver);
+		hp = new HomePage(driver);
+		as= new AadharSeedingDeseeding(driver);
+		
 		hp.clickOnAadharSeedingMenu();
 		
-		as.EnterUIDtoseeding("731817444183");
-		as.EnterAcctoseeding("50003413184");
+		as.EnterUIDtoseeding(p.getProperty("SeedingUid"));
+		as.EnterAcctoseeding(p.getProperty("SeedingAcctNo"));
 			Thread.sleep(3000);
 		as.clickOnproceed();
-		as.EnterAgentPassword("dfi@1234");
+		as.EnterAgentPassword(p.getProperty("AgentTxnPassword"));
 		as.ProceedAgentPassword();
 		as.YesToPanConsent();
 		as.ClickOnCustFpScan();
 		as.ClickOnProceedCustAuth();
 		if(as.ReceiptPage()) {
-			as.captureScreen("Seeding");
+			captureScreen("Seeding");
 			Thread.sleep(3000);
 			as.clickOnAnotherPayment();
 			Assert.assertTrue(true);
@@ -44,23 +46,25 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 	
 	@Test (priority = 2)
 	public void AadharDeSeeding() throws InterruptedException, IOException{
-		HomePage hp = new HomePage(driver);
-		AadharSeedingDeseeding as= new AadharSeedingDeseeding(driver);
+		hp = new HomePage(driver);
+		as= new AadharSeedingDeseeding(driver);
 		
 		hp.clickOnAadharSeedingMenu();
 		as.clickOnDeseedingMenu();
-		as.EnterUIDtoDeseeding("731817444183");
-		as.EnterAcctoDeseeding("50003413184");
+		//as.EnterUIDtoDeseeding("731817444183");
+		as.EnterUIDtoDeseeding(p.getProperty("SeedingUid"));
+		as.EnterAcctoDeseeding(p.getProperty("SeedingAcctNo"));
+		//as.captureScreen("Page");
 		Thread.sleep(2000);
 		as.clickOnproceed();
-		as.EnterAgentPassword("dfi@1234");
+		as.EnterAgentPassword(p.getProperty("AgentTxnPassword"));
 		as.ProceedAgentPassword();
 		as.YesToPanConsent();
 		as.ClickOnCustFpScan();
 		as.ClickOnProceedCustAuth();
 		
 		if(as.ReceiptPage()) {
-			as.captureScreen("DeSeeding");
+			captureScreen("DeSeeding");
 			Thread.sleep(3000);		
 			as.clickOnAnotherPayment();
 			Assert.assertTrue(true);

@@ -1,0 +1,78 @@
+package testCases;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import pageObjects.AccountOpeningEkyc;
+import pageObjects.HomePage;
+import testBase.BaseClass;
+
+public class IAO_New_Customer_Enrollment extends BaseClass{
+	
+	
+		HomePage hp;
+		AccountOpeningEkyc ao;
+	
+		@Test
+		public void Ekyc_Enrollment() throws InterruptedException {
+	try {
+		
+	
+		
+		hp = new HomePage(driver);
+		hp.clickOnAccOpenMenu();
+		hp.clickOnEkycMenu();
+		
+		ao = new AccountOpeningEkyc(driver);
+		ao.EnterUIDNo("731817444183");	
+		ao.clickOnProceedafterUIDorRefNo();				
+		ao.clickOnFpScanner();						
+		ao.clickOnProceedFpCapture();				
+		//ao.clickOnOkButtonPopup();	
+		
+		ao.captureScreen("InitialDetailPage");
+		ao.selectTitle("Mr");
+		ao.enterMobileNo("9423861710");
+		ao.verifyMobileNo();
+		ao.clickPanFlowRadioBtn();
+		ao.enterPanNo(null);
+		ao.verifyPanNo();
+		ao.clickProceedButtonInitialDetails();	
+		
+		ao.clickOkbtnIfPrecheckMsgShows();
+
+		//ao.clickOnCustomerDetailsTab();		//To close		
+		ao.selectCity("Mumbai");
+		ao.selectSubDistrict(null);
+		ao.selectVillage(null);
+		
+		
+		ao.clickOnCkycDetailsTab();			//To Open		
+		ao.clickOnCkycDetailsTab();			//To close			
+		ao.clickOnNomineeDetailsTab();		//To Open			
+		ao.clickOnNomineeDetailsTab();		//To close			
+		ao.clickProceedToPreview();					
+		Thread.sleep(2000);
+		ao.clickProceedToCustAuth();				
+		ao.clickOkAepsConsent();					
+		ao.clickYesPanConsent();					
+		ao.clickFpScanCustAuthFinal();				
+		ao.clickFinalProceed();							
+		ao.EnterInitialAmount("0");					
+		if (ao.VerifySucessMsg().equalsIgnoreCase("Initial Deposit Successful"))
+		{
+			ao.captureScreen("Ao_Receipt");
+			Assert.assertTrue(true);
+		}
+		Assert.assertEquals(ao.VerifySucessMsg(), "Initial Deposit Successful");
+	} 
+	
+	catch (Exception e) {
+		logger.error("Exception Found");
+	}
+		
+		
+	}
+		
+	
+}

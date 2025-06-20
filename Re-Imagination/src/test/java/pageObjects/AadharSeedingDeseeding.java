@@ -49,21 +49,7 @@ public class AadharSeedingDeseeding extends BasePage
 	@FindBy(xpath = "//div[@class='modal-content']//p[text()='PROCEED']")
 	WebElement btnProceedCustAuth;
 
-	public String captureScreen(String tname) throws IOException {
-
-		String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-
-		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
-
-		String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" + tname + "_" + timeStamp + ".png";
-		File targetFile=new File(targetFilePath);
-
-		sourceFile.renameTo(targetFile);
-
-		return targetFilePath;
-
-	}
+	
 
 
 	public void clickOnDeseedingMenu(){
