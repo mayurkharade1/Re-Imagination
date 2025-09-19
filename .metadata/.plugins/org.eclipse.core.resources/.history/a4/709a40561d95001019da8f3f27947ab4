@@ -1,0 +1,121 @@
+package testCases;
+
+import java.time.Duration;
+
+import javax.swing.JOptionPane;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class LeadCreation extends pageObjects.LeadCreation {
+	static WebDriver driver;
+	
+	static pageObjects.LeadCreation Lc;
+	public static void main(String[] args) throws InterruptedException {
+		
+		
+		Lc.login();
+		
+		Lc.clickOnLeadCreationMenu();
+		
+		
+		//Title dropdown
+		Lc.selectTitle("0001");
+		
+		Lc.enterFirstMiddleLastName("Mayur", "S", "K");
+		
+		//Gender dropdown
+		Lc.selectGender("Male");  //Male, Female
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter Mobile Name']")).sendKeys("9568696510");
+		
+		//DOB Calender
+		
+		LeadCreation.selectDate("15/02/2000");
+		
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 1']")).sendKeys("Add One");
+		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 2']")).sendKeys("Add Two");
+		
+		//State dropdown
+		WebElement drpState = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[3]"));
+		Select State= new Select(drpState);
+		State.selectByValue("MAHARASHTRA");
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter PinCode']")).sendKeys("400000");
+		
+		//ProductType dropdown
+		WebElement drpProductType = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[4]"));
+		Select ProductType= new Select(drpProductType);
+		ProductType.selectByVisibleText("Home loan");
+				
+		//ProductCategory dropdown
+		WebElement drpProductCategory = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[5]"));
+		Select ProductCategory= new Select(drpProductCategory);
+		ProductCategory.selectByVisibleText("Housing loan");
+				
+		//Product dropdown
+		WebElement drpProduct = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[6]"));
+		Select Product= new Select(drpProduct);
+		Product.selectByVisibleText("NEW : Home Loan To NON Salaried");
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter Loan Amount']")).sendKeys("125000");
+		
+		//CustomerIntrest dropdown
+		WebElement drpCustomerIntrest = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[7]"));
+		Select CustomerIntrest= new Select(drpCustomerIntrest);
+		CustomerIntrest.selectByVisibleText("Hot");
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter Preferred Branch']")).sendKeys("Mumbai");
+		
+		driver.findElement(By.xpath("//input[@id='No']")).click();
+		
+	}
+	
+	public static  void selectDate(String Date) throws InterruptedException {
+	 	   
+		try {
+				// value from Excel
+				String[] parts = Date.split("/");
+				String day = parts[0];
+				String month = parts[1];
+				String year = parts[2];	
+	    WebElement calendarIcon = driver.findElement(By.xpath("//button[contains(@aria-label,'Choose date')]"));
+	    calendarIcon.click();
+	    Thread.sleep(1000); // wait for the calendar to appear
+
+	   
+	    WebElement monthYearLabel = driver.findElement(By.xpath("//div[contains(@class,'MuiPickersCalendarHeader-labelContainer')]"));
+	    monthYearLabel.click();
+	    Thread.sleep(1000);
+
+	    WebElement targetYear = driver.findElement(By.xpath("//button[@type='button' and text()='"+year+"']"));
+	   // ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", targetYear);
+	    targetYear.click();
+	    Thread.sleep(1000);
+
+	    WebElement previousMontharrow = driver.findElement(By.xpath("//button[@aria-label='Previous month']"));
+	   
+	   String monthYear= month+" "+year;
+	for(int i=0;i<11;i++)
+	{
+		 WebElement yearMonth= driver.findElement(By.xpath("(//div[contains(@class,'MuiPickersCalendarHeader-label')])[2]"));
+		if(!yearMonth.getText().equals(monthYear))
+		{
+			previousMontharrow.click();
+		}
+	}
+	    
+	    WebElement targetDay = driver.findElement(By.xpath("//button[@role='gridcell' and normalize-space()='" + day + "']"));
+	    targetDay.click();
+		}
+	    catch(Exception e)
+		{
+	    	e.getStackTrace();
+		}
+	}
+
+}

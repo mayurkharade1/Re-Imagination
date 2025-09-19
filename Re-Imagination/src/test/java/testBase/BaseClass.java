@@ -53,8 +53,7 @@ public class BaseClass {
 		driver.get(p.getProperty("AppUrl"));
 		
 		LoginPage lp = new LoginPage(driver);
-		
-		
+				
 		lp.enterUserID(p.getProperty("UserId"));
 		lp.enterPassword(p.getProperty("Password"));
 		lp.enterCapcha();

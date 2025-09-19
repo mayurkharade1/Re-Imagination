@@ -1,0 +1,41 @@
+package testCases;
+
+import org.openqa.selenium.WebDriver;
+
+import pageObjects.LeadCreationA;
+
+public class LeadCreation extends LeadCreationA {
+	static WebDriver driver;
+	
+	 static LeadCreationA Lc = new LeadCreationA();
+	public static void main(String[] args) throws InterruptedException {
+		
+		
+		Lc.login();
+		Lc.clickOnLeadCreationMenu();
+		//Title dropdown
+		Lc.selectTitle("0001");
+		Lc.enterFirstMiddleLastName("Mayur", "S", "K");
+		Lc.selectGender("Male");  //Male, Female
+		Lc.enterMobileNo("6856584565");
+		Lc.selectDate("19/08/2024");
+		Lc.enterAddOneTwo("Addone", "AddTwo");
+		Lc.selectState("MAHARASHTRA");
+		Lc.enterPinCode("400000");
+		//ProductType dropdown - Home loan
+		Lc.selectProductType("Home loan");		
+		//ProductCategory dropdown - Housing loan
+		Lc.selectProductCategory("Housing loan");
+		//Product dropdown
+		Lc.selectProduct("NEW : Home Loan To NON Salaried");
+		Lc.enterLoadAmount("5000");
+		//CustomerIntrest dropdown
+		Lc.selectCustomerIntrest("Hot");
+		Lc.enterBranchName("Mumbai");
+		Lc.clickNO();
+		Lc.clickProceed();
+		
+	}
+	
+	
+}

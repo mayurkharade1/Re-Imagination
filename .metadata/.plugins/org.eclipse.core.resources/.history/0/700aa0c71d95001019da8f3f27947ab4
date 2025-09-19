@@ -1,0 +1,127 @@
+package pageObjects;
+
+import java.time.Duration;
+
+import javax.swing.JOptionPane;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class LeadCreation {
+	
+	WebDriver driver;
+	
+	public void login() throws InterruptedException{
+		
+		driver = new ChromeDriver();
+		driver.get("https://kioskiat.sbiuat.bank.in/unifyapp/login/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		
+		WebElement txtCaptcha =driver.findElement(By.xpath("//input[@placeholder='Enter Captcha']"));
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter User ID']")).sendKeys("3K580036");
+		driver.findElement(By.xpath("//input[@placeholder='Enter Password']")).sendKeys("dfi@1234");
+		
+		String captcha;
+		captcha = JOptionPane.showInputDialog("Please Enter The Captcha");
+		txtCaptcha.sendKeys(captcha);
+		
+		driver.findElement(By.xpath("//button[text()='PROCEED']")).click();
+		
+		driver.findElement(By.xpath("//img[@alt='FingerprintFirstNew']")).click();
+		
+		Thread.sleep(5000);
+	}
+
+	public void clickOnLeadCreationMenu() {
+		driver.findElement(By.xpath("//a[text()='Lead Creation']")).click();
+		driver.findElement(By.xpath("(//a[text()='Lead Creation'])[2]")).click();
+	}
+	
+	public void selectTitle(String titlecode){
+		WebElement drpTitle = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[1]"));
+		Select title= new Select(drpTitle);
+		title.selectByValue(titlecode);
+	}
+	
+	public void enterFirstMiddleLastName(String Fname, String Mname, String Lname) {
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter First Name']")).sendKeys(Fname);
+		driver.findElement(By.xpath("//input[@placeholder='Enter Middle Name']")).sendKeys(Mname);
+		driver.findElement(By.xpath("//input[@placeholder='Enter Last Name']")).sendKeys(Lname);
+	}
+	
+	public void selectGender(String gender)
+	{
+		WebElement drpGender = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[2]"));
+		Select Gender= new Select(drpGender);
+		Gender.selectByValue(gender);
+	}
+	
+	
+	public void enterMobileNo(String MobNO){
+		driver.findElement(By.xpath("//input[@placeholder='Enter Mobile Name']")).sendKeys(MobNO);
+	}
+	
+	public void selectDate(String Date) throws InterruptedException {
+	 	   
+		try {
+				// value from Excel
+				String[] parts = Date.split("/");
+				String day = parts[0];
+				String month = parts[1];
+				String year = parts[2];	
+	    WebElement calendarIcon = driver.findElement(By.xpath("//button[contains(@aria-label,'Choose date')]"));
+	    calendarIcon.click();
+	    Thread.sleep(1000); // wait for the calendar to appear
+
+	   
+	    WebElement monthYearLabel = driver.findElement(By.xpath("//div[contains(@class,'MuiPickersCalendarHeader-labelContainer')]"));
+	    monthYearLabel.click();
+	    Thread.sleep(1000);
+
+	    WebElement targetYear = driver.findElement(By.xpath("//button[@type='button' and text()='"+year+"']"));
+	   // ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", targetYear);
+	    targetYear.click();
+	    Thread.sleep(1000);
+
+	    WebElement previousMontharrow = driver.findElement(By.xpath("//button[@aria-label='Previous month']"));
+	   
+	   String monthYear= month+" "+year;
+	for(int i=0;i<11;i++)
+	{
+		 WebElement yearMonth= driver.findElement(By.xpath("(//div[contains(@class,'MuiPickersCalendarHeader-label')])[2]"));
+		if(!yearMonth.getText().equals(monthYear))
+		{
+			previousMontharrow.click();
+		}
+	}
+	    
+	    WebElement targetDay = driver.findElement(By.xpath("//button[@role='gridcell' and normalize-space()='" + day + "']"));
+	    targetDay.click();
+		}
+	    catch(Exception e)
+		{
+	    	e.getStackTrace();
+		}
+	}
+	
+	public void enterAddOneTwo(String AddOne, String AddTwo) {
+		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 1']")).sendKeys(AddOne);
+		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 2']")).sendKeys(AddTwo);
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

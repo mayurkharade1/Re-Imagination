@@ -1,0 +1,99 @@
+package testCases;
+
+import java.time.Duration;
+
+import javax.swing.JOptionPane;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class LeadCreation {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		driver.get("https://kioskiat.sbiuat.bank.in/unifyapp/login/");
+		
+		WebElement txtCaptcha =driver.findElement(By.xpath("//input[@placeholder='Enter Captcha']"));
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter User ID']")).sendKeys("3K580036");
+		driver.findElement(By.xpath("//input[@placeholder='Enter Password']")).sendKeys("dfi@1234");
+		
+		String captcha;
+		captcha = JOptionPane.showInputDialog("Please Enter The Captcha");
+		txtCaptcha.sendKeys(captcha);
+		
+		driver.findElement(By.xpath("//button[text()='PROCEED']")).click();
+		
+		driver.findElement(By.xpath("//img[@alt='FingerprintFirstNew']")).click();
+		
+		Thread.sleep(5000);
+		
+		driver.findElement(By.xpath("//a[text()='Lead Creation']")).click();
+		driver.findElement(By.xpath("(//a[text()='Lead Creation'])[2]")).click();
+		
+		
+		//Title dropdown
+		WebElement drpTitle = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[1]"));
+		Select title= new Select(drpTitle);
+		title.selectByValue("0001");
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter First Name']")).sendKeys("Mayur");
+		driver.findElement(By.xpath("//input[@placeholder='Enter Middle Name']")).sendKeys("S");
+		driver.findElement(By.xpath("//input[@placeholder='Enter Last Name']")).sendKeys("K");
+		
+		//Gender dropdown
+		WebElement drpGender = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[2]"));
+		Select Gender= new Select(drpGender);
+		Gender.selectByValue("Male");
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter Mobile Name']")).sendKeys("9568696510");
+		
+		//DOB Calender
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 1']")).sendKeys("Add One");
+		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 2']")).sendKeys("Add Two");
+		
+		//State dropdown
+		WebElement drpState = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[3]"));
+		Select State= new Select(drpState);
+		State.selectByValue("MAHARASHTRA");
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter PinCode']")).sendKeys("400000");
+		
+		//ProductType dropdown
+		WebElement drpProductType = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[4]"));
+		Select ProductType= new Select(drpProductType);
+		ProductType.selectByVisibleText("Home loan");
+				
+		//ProductCategory dropdown
+		WebElement drpProductCategory = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[5]"));
+		Select ProductCategory= new Select(drpProductCategory);
+		ProductCategory.selectByVisibleText("Housing loan");
+				
+		//Product dropdown
+		WebElement drpProduct = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[6]"));
+		Select Product= new Select(drpProduct);
+		Product.selectByVisibleText("NEW : Home Loan To NON Salaried");
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter Loan Amount']")).sendKeys("125000");
+		
+		//CustomerIntrest dropdown
+		WebElement drpCustomerIntrest = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[7]"));
+		Select CustomerIntrest= new Select(drpCustomerIntrest);
+		CustomerIntrest.selectByVisibleText("Hot");
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter Preferred Branch']")).sendKeys("Mumbai");
+		
+		
+	}
+	
+	
+
+}

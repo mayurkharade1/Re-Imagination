@@ -22,6 +22,8 @@ public class HomePage extends BasePage{
 	WebElement accOpenMenu;
 	@FindBy(xpath = "//a[text()='eKYC']")
 	WebElement accOpenEkycMenu;
+	@FindBy(xpath = "//a[text()='Non eKYC']")
+	WebElement accOpenNonEkycMenu;
 	
 	
 	public void clickOnChequeBook() {
@@ -38,6 +40,10 @@ public class HomePage extends BasePage{
 	public void clickOnEkycMenu() {
 		accOpenEkycMenu.click();
 	}
+	public void clickOnNonEkycMenu() {
+		accOpenNonEkycMenu.click();
+	}
+	
 	public void clickOnAadharSeedingMenu() {
 		AadharSeedDeseedMenu.click();
 	}
