@@ -48,9 +48,8 @@ public class LeadCreation extends BaseClass {
 		Lc.clickProceed();
 		
 		Thread.sleep(2000);
-		Lc.clickOKErrorPopup();
 		Lc.clickAnotherPaymentsReceipt();
-		
+		Lc.clickOKErrorPopup();	
 		Lc.nextCaseAlert();
 		
 		//Lc.n=false;
