@@ -10310,3 +10310,7 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.seleniumh
 2025-10-10 15:13:45,535 [Worker-24: Launching Executing test in C__Users_Lenovo_eclipse-workspace_Re-Imagination] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Lenovo\Downloads\eclipse-dsl-2024-09-R-win32-x86_64\eclipse\plugins\com.google.guava.failureaccess_1.0.2.jar
 2025-10-10 15:13:45,539 [Worker-24: Launching Executing test in C__Users_Lenovo_eclipse-workspace_Re-Imagination] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\Lenovo\eclipse-workspace\Re-Imagination":
 2025-10-10 15:13:45,539 [Worker-24: Launching Executing test in C__Users_Lenovo_eclipse-workspace_Re-Imagination] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always test
+2025-10-10 15:30:38,258 [Worker-35: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-10-10 15:30:38,260 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Lenovo\eclipse-workspace\Re-Imagination\src\main\resources
+2025-10-10 15:30:38,263 [Worker-35: Building] WARN  o.a.m.s.f.DefaultMavenResourcesFiltering - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-10-10 15:30:38,266 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\test\resources to target\test-classes
