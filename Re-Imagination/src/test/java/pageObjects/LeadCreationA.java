@@ -275,6 +275,7 @@ public class LeadCreationA extends BasePage {
 			WebElement LeadId=driver.findElement(By.xpath("(//p)[7]"));
 			String id =LeadId.getText();
 			System.out.println("Lead Id : "+id);
+			Thread.sleep(2000);
 			WebElement btnAnotherpy=driver.findElement(By.xpath("//p[text()='ANOTHER PAYMENT']"));
 			btnAnotherpy.click();
 			
@@ -295,7 +296,7 @@ public class LeadCreationA extends BasePage {
 		WebElement btn = driver.findElement(By.xpath("//p[text()='OK']"));
 		if (btn.isDisplayed()) 
 		{
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 			btn.click();
 		}}
 		catch(Exception e) {

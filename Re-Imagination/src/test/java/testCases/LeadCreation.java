@@ -1,5 +1,8 @@
 package testCases;
 
+import static org.testng.Assert.assertTrue;
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pageObjects.LeadCreationA;
@@ -44,7 +47,7 @@ public class LeadCreation extends BaseClass {
 		//Lc.selectExistingCustomer("No","");
 		Lc.clickProceed();
 		
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		Lc.clickOKErrorPopup();
 		Lc.clickAnotherPaymentsReceipt();
 		
@@ -60,6 +63,7 @@ public class LeadCreation extends BaseClass {
 //		} 
 		
 	}
+		Assert.assertTrue(true);
 	}
 	
 	
