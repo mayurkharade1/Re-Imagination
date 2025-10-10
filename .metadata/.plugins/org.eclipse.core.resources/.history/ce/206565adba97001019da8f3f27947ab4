@@ -1,0 +1,62 @@
+package testCases;
+
+import java.io.IOException;
+import pageObjects.LeadCreationA;
+
+public class LeadCreation extends LeadCreationA {
+	// WebDriver driver;
+	
+	static LeadCreationA Lc = new LeadCreationA();
+	
+	public static void main(String[] args) throws InterruptedException, IOException {
+		
+		
+		Lc.login();
+		
+		
+	//while(Lc.n==1) {	
+	//System.out.println("Login");}
+	try{
+		Lc.selectScenario();
+		Lc.clickOnLeadCreationMenu();
+		//Title dropdown
+		Lc.selectTitle("0001");
+		Lc.enterFirstMiddleLastName(Lc.randomeString(), Lc.randomeString(), Lc.randomeString());
+		Lc.selectGender("Male");  //Male, Female
+		Lc.enterMobileNo(Lc.randomeNumber(9));
+		Lc.selectDate("10/June/2001");
+		Lc.enterAddOneTwo(Lc.randomeString(), Lc.randomeString());
+		Lc.selectState("MAHARASHTRA");
+		Lc.enterPinCode("400011");
+		//ProductType dropdown
+		Lc.selectProductType(Lc.ProductType);		
+		//ProductCategory dropdown
+		Lc.selectProductCategory(Lc.ProductCategory);
+		//Product dropdown
+		Lc.selectProduct(Lc.Product);
+		Lc.enterLoadAmount(Lc.randomeNumber(5));
+		//CustomerIntrest dropdown
+		Lc.selectCustomerIntrest("Cold");
+		//Lc.enterBranchName("Mumbai");
+		//Lc.selectExistingCustomer("Yes","90000001234");
+		Lc.selectExistingCustomer("No","");
+		Lc.clickProceed();
+		
+		Thread.sleep(5000);
+		Lc.clickOKErrorPopup();
+		
+		//Lc.nextCaseAlert();
+		
+		
+		}
+		catch(Exception e)
+		{
+	    	e.getStackTrace();
+		} 
+		
+		
+	}
+	
+	
+	
+}

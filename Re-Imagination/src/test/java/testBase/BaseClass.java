@@ -30,7 +30,7 @@ public class BaseClass {
 	public Properties p;
 	
 
-	@BeforeClass
+	//@BeforeClass
 	@Parameters({"browser"})
 	public void Login(String br) throws IOException 
 	{
@@ -68,8 +68,14 @@ public class BaseClass {
 //		return p;
 //	}
 	
+	/*		Properties p;
+	FileReader file=new FileReader(".//src//test//resources//config.properties");
+	p = new Properties();
+	p.load(file);
+*/
 	
-	@AfterClass
+	
+	//@AfterClass
 	public void tearDown() throws InterruptedException 
 	{
 		//Thread.sleep(15000);

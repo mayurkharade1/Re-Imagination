@@ -1,41 +1,65 @@
 package testCases;
 
-import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
 
 import pageObjects.LeadCreationA;
 
 public class LeadCreation extends LeadCreationA {
-	static WebDriver driver;
+	// WebDriver driver;
 	
-	 static LeadCreationA Lc = new LeadCreationA();
-	public static void main(String[] args) throws InterruptedException {
+	static LeadCreationA Lc = new LeadCreationA();
+	
+	//public static void main(String[] args) throws InterruptedException, IOException {
 		
-		
+	@Test
+	public void LeadCreate() throws InterruptedException {	
 		Lc.login();
+		while(Lc.n) {	
+	//System.out.println("Login");}
+//	try{
+		Lc.selectScenario();
 		Lc.clickOnLeadCreationMenu();
 		//Title dropdown
-		Lc.selectTitle("0001");
-		Lc.enterFirstMiddleLastName("Mayur", "S", "K");
-		Lc.selectGender("Male");  //Male, Female
-		Lc.enterMobileNo("6856584565");
-		Lc.selectDate("19/08/2024");
-		Lc.enterAddOneTwo("Addone", "AddTwo");
+		Lc.selectTitle(Lc.getRandomTitle());
+		Lc.enterFirstMiddleLastName(Lc.randomeString(), Lc.randomeString(), Lc.randomeString());
+		Lc.selectGender(Lc.getRandomGender());  //Male, Female
+		//Lc.enterMobileNo(Lc.randomeNumber(9));
+		Lc.enterMobileNo(Lc.randomeNumber(9));
+		Lc.selectDate("19/May/1998");
+		Lc.enterAddOneTwo(Lc.randomeString(), Lc.randomeString());
 		Lc.selectState("MAHARASHTRA");
-		Lc.enterPinCode("400000");
-		//ProductType dropdown - Home loan - Life Insurance - Mudra Loan
-		Lc.selectProductType("Life Insurance");		
-		//ProductCategory dropdown - Housing loan - Life Insurance - SME
-		Lc.selectProductCategory("Life Insurance");
-		//Product dropdown - NEW : Home Loan To NON Salaried -Life Insurance - Pradhan Mantri MUDRA Yojana
-		Lc.selectProduct("Life Insurance");
-		Lc.enterLoadAmount("500000");
-		//CustomerIntrest dropdown
-		Lc.selectCustomerIntrest("Hot");
-		Lc.enterBranchName("Mumbai");
-		Lc.clickNO();
+		Lc.enterPinCode(Lc.randomePincode());
+		
+		//ProductType dropdown
+		Lc.selectProductType(Lc.ProductType);		
+		//ProductCategory dropdown
+		Lc.selectProductCategory(Lc.ProductCategory);
+		//Product dropdown
+		Lc.selectProduct(Lc.Product);
+		Lc.enterLoadAmount(Lc.randomeNumber(5));
+		Lc.selectCustomerIntrest(Lc.getInterest());
+		Lc.selectExistingCustomer("Yes",Lc.randomeNumber(10));
+		//Lc.selectExistingCustomer("No","");
 		Lc.clickProceed();
 		
+		Thread.sleep(5000);
+		Lc.clickOKErrorPopup();
+		Lc.clickAnotherPaymentsReceipt();
+		
+		Lc.nextCaseAlert();
+		
+		//Lc.n=false;
+		
+		
+//		}
+//		catch(Exception e)
+//		{
+//	    	e.getStackTrace();
+//		} 
+		
 	}
+	}
+	
 	
 	
 }

@@ -1,30 +1,60 @@
 package pageObjects;
 
+import java.io.FileReader;
 import java.time.Duration;
+import java.util.Properties;
+import java.util.Random;
 
 import javax.swing.JOptionPane;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.ExcelUtil;
+
 public class LeadCreationA {
 	
 	WebDriver driver;
+	JavascriptExecutor js=(JavascriptExecutor) driver;
+	public Properties p;
+	public String ProductType;
+	public String ProductCategory;
+	public String Product;
+	public boolean n=true;
+	
+	public void selectScenario() {
+	 String rowNo = JOptionPane.showInputDialog("Enter Case Number: ");
+		
+	 int num = Integer.parseInt(rowNo);
+	
+	 String[] data = ExcelUtil.getExcelRowData(num);
+	 
+	  ProductType = data[0];
+	  ProductCategory = data[1];
+	  Product = data[2];
+	 
+	 System.out.println("ProductType: " + data[0]);
+     System.out.println("ProductCategory: " + data[1]);
+     System.out.println("Product: " + data[2]);
+	}
 	
 	public void login() throws InterruptedException{
 		
 		driver = new ChromeDriver();
 		driver.get("https://kioskiat.sbiuat.bank.in/unifyapp/login/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		
-		WebElement txtCaptcha =driver.findElement(By.xpath("//input[@placeholder='Enter Captcha']"));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));		
+		
+		JavascriptExecutor js=(JavascriptExecutor) driver;
 		
 		driver.findElement(By.xpath("//input[@placeholder='Enter User ID']")).sendKeys("3K580036");
 		driver.findElement(By.xpath("//input[@placeholder='Enter Password']")).sendKeys("dfi@1234");
-		
+		WebElement txtCaptcha =driver.findElement(By.xpath("//input[@placeholder='Enter Captcha']"));
 		String captcha;
 		captcha = JOptionPane.showInputDialog("Please Enter The Captcha");
 		txtCaptcha.sendKeys(captcha);
@@ -47,6 +77,18 @@ public class LeadCreationA {
 		title.selectByValue(titlecode);
 	}
 	
+	 public String getRandomTitle() {
+	        // Define values inside the method
+	        String[] values = {"0001", "0002", "0007", "0004", "0009"};
+
+	        // Generate a random index
+	        Random random = new Random();
+	        int index = random.nextInt(values.length);
+
+	        // Return random value
+	        return values[index];
+	    }
+	
 	public void enterFirstMiddleLastName(String Fname, String Mname, String Lname) {
 		
 		driver.findElement(By.xpath("//input[@placeholder='Enter First Name']")).sendKeys(Fname);
@@ -61,9 +103,33 @@ public class LeadCreationA {
 		Gender.selectByValue(gender);
 	}
 	
+	 public String getRandomGender() {
+	        // Define values inside the method
+	        String[] values = {"Male", "Female"};
+
+	        // Generate a random index
+	        Random random = new Random();
+	        int index = random.nextInt(values.length);
+
+	        // Return random value
+	        return values[index];
+	    }
+	
 	
 	public void enterMobileNo(String MobNO){
 		driver.findElement(By.xpath("//input[@placeholder='Enter Mobile Name']")).sendKeys(MobNO);
+	}
+	
+	public String randomDOB() {
+		// Define values inside the method
+        String[] values = {"Male", "Female"};
+
+        // Generate a random index
+        Random random = new Random();
+        int index = random.nextInt(values.length);
+
+        // Return random value
+        return values[index];
 	}
 	
 	public void selectDate(String Date) throws InterruptedException {
@@ -74,6 +140,7 @@ public class LeadCreationA {
 				String day = parts[0];
 				String month = parts[1];
 				String year = parts[2];	
+				//System.out.println("Date : "+day +",Month : "+month+",Year : " +year);
 	    WebElement calendarIcon = driver.findElement(By.xpath("//button[contains(@aria-label,'Choose date')]"));
 	    calendarIcon.click();
 	    Thread.sleep(1000); // wait for the calendar to appear
@@ -129,6 +196,9 @@ public class LeadCreationA {
 		WebElement drpProductType = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[4]"));
 		Select ProductTyp= new Select(drpProductType);
 		ProductTyp.selectByVisibleText(ProductType);
+		if (ProductType.equalsIgnoreCase("Mudra Loan")) {
+			driver.findElement(By.xpath("//input[@placeholder='Enter Business Unit']")).sendKeys("Buss Name");
+		}
 	}
 	
 	public void selectProductCategory(String ProductCategory){
@@ -153,19 +223,124 @@ public class LeadCreationA {
 	CustomerIntrest.selectByVisibleText(Interest);
 	}
 	
+	 public String getInterest() {
+	 
+	        String[] values = {"Hot", "Cold","Warm"};
+	        Random random = new Random();
+	        int index = random.nextInt(values.length);
+	        return values[index];
+	    }
+	
 	public void enterBranchName(String BranchName){
 		driver.findElement(By.xpath("//input[@placeholder='Enter Preferred Branch']")).sendKeys(BranchName);
 	}
 	
 	
-	public void clickNO()
+	public void selectExistingCustomer(String value, String cif) throws InterruptedException
 	{
-		driver.findElement(By.xpath("//input[@id='No']")).click();
+		Thread.sleep(2000);
+		if(value.equalsIgnoreCase("No"))
+		{
+			driver.findElement(By.xpath("//input[@id='No']")).click();
+		}
+		else 
+		{	
+		//driver.findElement(By.xpath("//input[@id='Yes']")).click();
+		driver.findElement(By.xpath("//input[@placeholder='Enter CIF number ']")).sendKeys(cif);		
+		}
+		
 	}
 	public void clickProceed()
 	{
-		driver.findElement(By.xpath("//p[text()='Proceed']")).click();
+		WebElement btnProceed = driver.findElement(By.xpath("//p[text()='Proceed']"));
+		
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btnProceed);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click()", btnProceed);
+		
+		if (btnProceed.isEnabled()) {
+			//btnProceed.click();
+		}
 	}
 	
+	public void clickAnotherPaymentsReceipt()
+	{
+		try{
+		boolean successMsg=driver.findElement(By.xpath("//p[text()='Lead Creation Successful']")).isDisplayed();
+		if (successMsg) {
+			System.out.println("Lead Creation Successful");
+			WebElement LeadId=driver.findElement(By.xpath("(//p)[7]"));
+			String id =LeadId.getText();
+			WebElement btnAnotherpy=driver.findElement(By.xpath("//p[text()='ANOTHER PAYMENT']"));
+			btnAnotherpy.click();
+			System.out.println("Lead Id : "+id);
+		}
+		else
+		{
+			System.out.println("Lead Creation Failed");
+		}
+		}
+		catch(Exception e)
+		{
+			
+		}
+		}
+	
+	public void clickOKErrorPopup() throws InterruptedException{
+		try {
+		WebElement btn = driver.findElement(By.xpath("//p[text()='OK']"));
+		if (btn.isDisplayed()) 
+		{
+			Thread.sleep(3000);
+			btn.click();
+		}}
+		catch(Exception e) {
+			
+		}
+		
+	}
+	void tearDown() {
+		
+	}
+	
+	public String randomeString()
+	{
+		String generatedString=RandomStringUtils.randomAlphabetic(5).toLowerCase();
+		return generatedString;
+	}
+	
+	public String randomeNumber(int num)
+	{
+		String generatedString=RandomStringUtils.randomNumeric(num);
+		String Number= "8"+generatedString;
+		return Number;
+	}
+	public String randomePincode()
+	{
+		String generatedString=RandomStringUtils.randomNumeric(5);
+		String Number= "4"+generatedString;
+		return Number;
+	}
+	
+	public void nextCaseAlert() {
+	 int response = JOptionPane.showConfirmDialog(
+	            null,
+	            "Do you want to proceed for next case?",
+	            "Confirm",
+	            JOptionPane.YES_NO_OPTION,
+	            JOptionPane.QUESTION_MESSAGE
+	        );
+
+	        // Check user response
+	        if (response == JOptionPane.YES_OPTION) {
+	            // User clicked YES
+	        	n=true;
+	        	
+	            System.out.println("Continue");
+	        } else if (response == JOptionPane.NO_OPTION) {
+	            // User clicked NO
+	        	n=false;
+	            //driver.close();
+	        }
+	}
 	
 }
