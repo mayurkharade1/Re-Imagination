@@ -70,7 +70,6 @@ INDEX VERSION 1.134+C:\Users\Lenovo\eclipse-workspace\.metadata\.plugins\org.ecl
 2216760165.index
 4165755061.index
 3493922483.index
-2328269416.index
 3916868143.index
 3503684364.index
 722466000.index

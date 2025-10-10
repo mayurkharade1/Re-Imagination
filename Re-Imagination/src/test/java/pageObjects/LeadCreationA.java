@@ -17,15 +17,19 @@ import org.openqa.selenium.support.ui.Select;
 
 import utilities.ExcelUtil;
 
-public class LeadCreationA {
+public class LeadCreationA extends BasePage {
 	
-	WebDriver driver;
+	//WebDriver driver;
 	JavascriptExecutor js=(JavascriptExecutor) driver;
 	public Properties p;
 	public String ProductType;
 	public String ProductCategory;
 	public String Product;
 	public boolean n=true;
+	
+	public LeadCreationA(WebDriver driver) {
+		super(driver);
+	}
 	
 	public void selectScenario() {
 	 String rowNo = JOptionPane.showInputDialog("Enter Case Number: ");
@@ -270,9 +274,10 @@ public class LeadCreationA {
 			System.out.println("Lead Creation Successful");
 			WebElement LeadId=driver.findElement(By.xpath("(//p)[7]"));
 			String id =LeadId.getText();
+			System.out.println("Lead Id : "+id);
 			WebElement btnAnotherpy=driver.findElement(By.xpath("//p[text()='ANOTHER PAYMENT']"));
 			btnAnotherpy.click();
-			System.out.println("Lead Id : "+id);
+			
 		}
 		else
 		{

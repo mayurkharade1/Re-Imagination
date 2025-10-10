@@ -3,19 +3,21 @@ package testCases;
 import org.testng.annotations.Test;
 
 import pageObjects.LeadCreationA;
+import testBase.BaseClass;
 
-public class LeadCreation extends LeadCreationA {
+public class LeadCreation extends BaseClass {
 	// WebDriver driver;
 	
-	static LeadCreationA Lc = new LeadCreationA();
 	
 	//public static void main(String[] args) throws InterruptedException, IOException {
 		
 	@Test
 	public void LeadCreate() throws InterruptedException {	
-		Lc.login();
+		//Lc.login();
+		
+		LeadCreationA Lc = new LeadCreationA(driver);
 		while(Lc.n) {	
-	//System.out.println("Login");}
+	
 //	try{
 		Lc.selectScenario();
 		Lc.clickOnLeadCreationMenu();

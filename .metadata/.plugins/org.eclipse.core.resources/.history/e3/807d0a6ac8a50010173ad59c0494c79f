@@ -75,7 +75,7 @@ public class BaseClass {
 */
 	
 	
-	@AfterClass
+	//@AfterClass
 	public void tearDown() throws InterruptedException 
 	{
 		//Thread.sleep(15000);

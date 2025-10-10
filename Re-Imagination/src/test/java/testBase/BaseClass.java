@@ -30,7 +30,7 @@ public class BaseClass {
 	public Properties p;
 	
 
-	//@BeforeClass
+	@BeforeClass
 	@Parameters({"browser"})
 	public void Login(String br) throws IOException 
 	{
@@ -75,7 +75,7 @@ public class BaseClass {
 */
 	
 	
-	//@AfterClass
+	@AfterClass
 	public void tearDown() throws InterruptedException 
 	{
 		//Thread.sleep(15000);

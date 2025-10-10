@@ -6,6 +6,8 @@
     <classes>
       <class name="testCases.LeadCreation">
         <methods>
+          <include name="tearDown"/>
+          <include name="Login"/>
           <include name="LeadCreate"/>
         </methods>
       </class> <!-- testCases.LeadCreation -->

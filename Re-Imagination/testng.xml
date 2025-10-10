@@ -7,9 +7,9 @@
     <classes>
       <!--  <class name="testCases.TC02_ChequeBookIssuance"/>-->
       <!-- <class name="testCases.TC03_AadharSeedingDeesing"/>
-       <class name="testCases.IAO_Continue_Customer_Creation"/> 
-      <class name="testCases.IAO_New_Customer_Enrollment"/>-->
-      <class name="testCases.LeadCreation"/>
+       <class name="testCases.IAO_Continue_Customer_Creation"/>--> 
+      <!-- <class name="testCases.IAO_New_Customer_Enrollment"/> -->
+       <class name="testCases.LeadCreation"/> 
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
