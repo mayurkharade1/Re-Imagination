@@ -2,6 +2,8 @@ package pageObjects;
 
 import javax.swing.JOptionPane;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,7 +23,7 @@ public class LoginPage extends BasePage {
 	@FindBy(xpath = "//input[@placeholder='Enter Captcha']")
 	WebElement txtCaptcha;
 
-	@FindBy(xpath = "//button[@class='proceedbutton btn btn-contained']")
+	@FindBy(xpath = "//button[text()='PROCEED']")
 	WebElement btnProceed;
 	
 	@FindBy(xpath = "//img[@alt='FingerprintFirstNew']")
@@ -45,7 +47,10 @@ public class LoginPage extends BasePage {
 		captcha = JOptionPane.showInputDialog("Please Enter The Captcha");
 		txtCaptcha.sendKeys(captcha);
 	}
-	public void clickProceed() {
+	public void clickProceed() throws InterruptedException {
+		
+		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", btnProceed);
+		Thread.sleep(500);
 		btnProceed.click();
 		
 	}

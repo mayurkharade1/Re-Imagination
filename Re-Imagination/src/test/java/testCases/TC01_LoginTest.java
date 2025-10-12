@@ -8,7 +8,7 @@ public class TC01_LoginTest extends BaseClass{
 
 
 	@Test
-	public void Do_Login() 
+	public void Do_Login() throws InterruptedException 
 	{
 		
 		LoginPage lp = new LoginPage(driver);

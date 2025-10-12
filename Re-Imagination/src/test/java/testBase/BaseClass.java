@@ -8,11 +8,16 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
 
+import javax.swing.JOptionPane;
+
 import org.apache.logging.log4j.LogManager;//log4j
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
@@ -32,7 +37,7 @@ public class BaseClass {
 
 	@BeforeClass
 	@Parameters({"browser"})
-	public void Login(String br) throws IOException 
+	public void Login(String br) throws IOException, InterruptedException 
 	{
 		logger=LogManager.getLogger(this.getClass());
 		
@@ -53,8 +58,7 @@ public class BaseClass {
 		driver.get(p.getProperty("AppUrl"));
 		
 		LoginPage lp = new LoginPage(driver);
-		
-		
+				
 		lp.enterUserID(p.getProperty("UserId"));
 		lp.enterPassword(p.getProperty("Password"));
 		lp.enterCapcha();
@@ -62,12 +66,45 @@ public class BaseClass {
 		lp.clickFpScanner();
 	}
 	
+	
+	public void login() throws InterruptedException{
+		
+		driver = new ChromeDriver();
+		driver.get("https://kioskiat.sbiuat.bank.in/unifyapp/login/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));		
+		
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter User ID']")).sendKeys("3K580036");
+		driver.findElement(By.xpath("//input[@placeholder='Enter Password']")).sendKeys("dfi@1234");
+		WebElement txtCaptcha =driver.findElement(By.xpath("//input[@placeholder='Enter Captcha']"));
+		String captcha;
+		captcha = JOptionPane.showInputDialog("Please Enter The Captcha");
+		txtCaptcha.sendKeys(captcha);
+		
+		WebElement el =driver.findElement(By.xpath("//button[text()='PROCEED']"));
+		
+		js.executeScript("arguments[0].scrollIntoView(true);", el);
+		Thread.sleep(500);
+		el.click();
+		
+		driver.findElement(By.xpath("//img[@alt='FingerprintFirstNew']")).click();
+		
+		Thread.sleep(5000);
+	}
 //	Properties property() throws IOException{
 //		FileReader file=new FileReader(".//src//test//resources//config.properties");
 //		p = new Properties();
 //		p.load(file);
 //		return p;
 //	}
+	
+	/*		Properties p;
+	FileReader file=new FileReader(".//src//test//resources//config.properties");
+	p = new Properties();
+	p.load(file);
+*/
 	
 	
 	@AfterClass

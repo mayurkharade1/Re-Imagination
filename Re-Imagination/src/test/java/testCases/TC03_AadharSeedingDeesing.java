@@ -17,7 +17,8 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 	
 	
 	@Test (priority = 1)
-	public void AadharSeeding() throws InterruptedException, IOException{
+	public void AadharSeeding() throws InterruptedException, IOException
+	{
 		hp = new HomePage(driver);
 		as= new AadharSeedingDeseeding(driver);
 		
@@ -32,20 +33,20 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 		as.YesToPanConsent();
 		as.ClickOnCustFpScan();
 		as.ClickOnProceedCustAuth();
-		if(as.ReceiptPage()) {
+		if(as.ReceiptPage()) 
+		{
 			captureScreen("Seeding");
 			Thread.sleep(3000);
 			as.clickOnAnotherPayment();
 			Assert.assertTrue(true);
 			
-		}
-		
-		
+		}		
 	}
 	
 	
 	@Test (priority = 2)
-	public void AadharDeSeeding() throws InterruptedException, IOException{
+	public void AadharDeSeeding() throws InterruptedException, IOException
+	{
 		hp = new HomePage(driver);
 		as= new AadharSeedingDeseeding(driver);
 		
@@ -69,11 +70,6 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 			as.clickOnAnotherPayment();
 			Assert.assertTrue(true);
 			
-		}
-		
-		
-			
-		
-	}
-	
+		}		
+	}	
 }
