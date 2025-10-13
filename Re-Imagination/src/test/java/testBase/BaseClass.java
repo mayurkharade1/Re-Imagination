@@ -117,6 +117,16 @@ public class BaseClass {
 	p.load(file);
 */
 	
+	public BaseClass() {
+        try {
+            p = new Properties();
+            FileReader fis = new FileReader(".//src//test//resources//config.properties");
+            p.load(fis);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+	
 	
 	@AfterClass
 	public void tearDown() throws InterruptedException 

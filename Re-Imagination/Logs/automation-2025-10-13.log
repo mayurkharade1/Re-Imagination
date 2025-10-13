@@ -1,0 +1,92 @@
+12:03:22.753 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:03:22.757 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:03:22.757 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+12:03:22.757 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+12:03:22.763 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\khara\AppData\Local\Temp\testng-eclipse--1963018757\testng-customsuite.xml
+
+12:03:22.781 [main] INFO  org.testng.internal.Utils - [Utils] DynamicGraphHelper.createDynamicGraph() took 4 ms.
+12:03:22.965 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.jq.Main@1fc0053e: 70 ms
+12:03:22.984 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.FailedReporter@532a02d9: 19 ms
+12:03:22.996 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.XMLReporter@754777cd: 12 ms
+12:03:23.009 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@142eef62: 12 ms
+12:03:23.016 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@47289387: 7 ms
+12:03:23.017 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@12cd9150: 0 ms
+12:03:34.477 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
+
+12:05:22.243 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
+
+12:08:42.414 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
+
+12:13:09.872 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
+
+12:13:57.765 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
+
+12:16:58.561 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
+
+12:19:57.618 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
+
+12:13:35.822 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+12:15:56.182 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+12:20:06.469 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+12:22:26.781 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+12:26:40.784 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+12:30:06.434 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+12:35:20.444 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+13:37:19.994 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+13:39:29.724 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+13:42:09.606 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+15:45:51.168 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+15:47:13.775 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+15:48:47.804 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+15:52:13.166 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+15:55:31.192 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+16:10:37.960 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+16:16:02.137 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+16:18:40.651 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+
+16:28:16.428 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
+

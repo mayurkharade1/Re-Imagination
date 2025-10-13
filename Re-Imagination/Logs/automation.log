@@ -1,89 +1,54 @@
-12:03:22.753 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
-12:03:22.757 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
-12:03:22.757 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
-12:03:22.757 [main] INFO  org.testng.internal.Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
-12:03:22.763 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\khara\AppData\Local\Temp\testng-eclipse--1963018757\testng-customsuite.xml
-
-12:03:22.781 [main] INFO  org.testng.internal.Utils - [Utils] DynamicGraphHelper.createDynamicGraph() took 4 ms.
-12:03:22.965 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.jq.Main@1fc0053e: 70 ms
-12:03:22.984 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.FailedReporter@532a02d9: 19 ms
-12:03:22.996 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.XMLReporter@754777cd: 12 ms
-12:03:23.009 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.EmailableReporter2@142eef62: 12 ms
-12:03:23.016 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.reporters.JUnitReportReporter@47289387: 7 ms
-12:03:23.017 [main] INFO  org.testng.internal.Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@12cd9150: 0 ms
-12:03:34.477 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
-
-12:05:22.243 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
-
-12:08:42.414 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
-
-12:13:09.872 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
-
-12:13:57.765 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
-
-12:16:58.561 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
-
-12:19:57.618 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Mayur\Automation_Testing\Reimagination\Re-Imagination\testng.xml
-
-12:13:35.822 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+16:31:47.159 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
   C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
 
-12:15:56.182 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+16:33:41.645 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
   C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
 
-12:20:06.469 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+19:09:41.519 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
   C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
 
-12:22:26.781 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-12:26:40.784 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-12:30:06.434 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-12:35:20.444 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-13:37:19.994 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-13:39:29.724 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-13:42:09.606 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-15:45:51.168 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-15:47:13.775 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-15:48:47.804 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-15:52:13.166 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-15:55:31.192 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-16:10:37.960 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-16:16:02.137 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
-16:18:40.651 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
-  C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
-
+19:10:48.925 [main] ERROR org.apache.poi.openxml4j.opc.internal.ZipContentTypeManager - Cannot write: [Content_Types].xml in Zip !
+java.io.IOException: Stream Closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method) ~[?:?]
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:367) ~[?:?]
+	at org.apache.commons.compress.archivers.zip.StreamCompressor$OutputStreamCompressor.writeOut(StreamCompressor.java:64) ~[commons-compress-1.27.1.jar:1.27.1]
+	at org.apache.commons.compress.archivers.zip.StreamCompressor.writeCounted(StreamCompressor.java:305) ~[commons-compress-1.27.1.jar:1.27.1]
+	at org.apache.commons.compress.archivers.zip.StreamCompressor.writeCounted(StreamCompressor.java:301) ~[commons-compress-1.27.1.jar:1.27.1]
+	at org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.writeCounted(ZipArchiveOutputStream.java:1660) ~[commons-compress-1.27.1.jar:1.27.1]
+	at org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.writeLocalFileHeader(ZipArchiveOutputStream.java:1714) ~[commons-compress-1.27.1.jar:1.27.1]
+	at org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.putArchiveEntry(ZipArchiveOutputStream.java:1237) ~[commons-compress-1.27.1.jar:1.27.1]
+	at org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.putArchiveEntry(ZipArchiveOutputStream.java:1180) ~[commons-compress-1.27.1.jar:1.27.1]
+	at org.apache.poi.openxml4j.opc.internal.ZipContentTypeManager.saveImpl(ZipContentTypeManager.java:67) ~[poi-ooxml-5.4.1.jar:5.4.1]
+	at org.apache.poi.openxml4j.opc.internal.ContentTypeManager.save(ContentTypeManager.java:450) ~[poi-ooxml-5.4.1.jar:5.4.1]
+	at org.apache.poi.openxml4j.opc.ZipPackage.saveImpl(ZipPackage.java:674) ~[poi-ooxml-5.4.1.jar:5.4.1]
+	at org.apache.poi.openxml4j.opc.OPCPackage.save(OPCPackage.java:1700) ~[poi-ooxml-5.4.1.jar:5.4.1]
+	at org.apache.poi.ooxml.POIXMLDocument.write(POIXMLDocument.java:227) ~[poi-ooxml-5.4.1.jar:5.4.1]
+	at utilities.ExcelUtility.fillGreenColor(ExcelUtility.java:126) ~[test-classes/:?]
+	at pageObjects.LeadCreationA.clickAnotherPaymentsReceipt(LeadCreationA.java:291) ~[test-classes/:?]
+	at testCases.LeadCreation.LeadCreate(LeadCreation.java:53) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687) ~[testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995) ~[testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.11.0.jar:7.11.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:741) [testng-7.11.0.jar:7.11.0]
+	at org.testng.TestRunner.run(TestRunner.java:616) [testng-7.11.0.jar:7.11.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.11.0.jar:7.11.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.11.0.jar:7.11.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.11.0.jar:7.11.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.11.0.jar:7.11.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.11.0.jar:7.11.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.11.0.jar:7.11.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.11.0.jar:7.11.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.11.0.jar:7.11.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.11.0.jar:7.11.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.11.0.jar:7.11.0]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91) [testng-remote.jar:?]

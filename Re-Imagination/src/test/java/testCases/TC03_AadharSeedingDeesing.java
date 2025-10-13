@@ -35,7 +35,7 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 		as.ClickOnProceedCustAuth();
 		if(as.ReceiptPage()) 
 		{
-			captureScreen("Seeding");
+			//captureScreen("Seeding");
 			Thread.sleep(3000);
 			as.clickOnAnotherPayment();
 			Assert.assertTrue(true);

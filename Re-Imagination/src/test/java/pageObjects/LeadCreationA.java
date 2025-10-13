@@ -32,7 +32,7 @@ public class LeadCreationA extends BasePage {
 	String Leadid;
 	int rownum;
 	BaseClass baseClass = new BaseClass();
-	//ExcelUtility ex= new ExcelUtility(baseClass.p.getProperty("ExcelPath"));
+	ExcelUtility ex= new ExcelUtility(baseClass.p.getProperty("ExcelPath"));
 	
 	public LeadCreationA(WebDriver driver) {
 		super(driver);
@@ -280,7 +280,7 @@ public class LeadCreationA extends BasePage {
 	public void clickAnotherPaymentsReceipt()
 	{
 		try{
-		boolean successMsg=driver.findElement(By.xpath("//p[text()='Lead Creation Successful']")).isDisplayed();
+		boolean successMsg=driver.findElement(By.xpath("//p[text()='Lead Creation Successful']")) .isDisplayed();
 		if (successMsg) {
 			System.out.println("Lead Creation Successful");
 			baseClass.captureScreen(driver, "LeadCreation_success");
@@ -288,6 +288,7 @@ public class LeadCreationA extends BasePage {
 			Leadid =LeadId.getText();
 			System.out.println("Lead Id : "+Leadid);
 			ex.setCellData("Sheet1", rownum-1, 7, Leadid);
+			ex.fillGreenColor("Sheet1", rownum-1 , 8);
 			Thread.sleep(2000);
 			WebElement btnAnotherpy=driver.findElement(By.xpath("//p[text()='ANOTHER PAYMENT']"));
 			btnAnotherpy.click();
