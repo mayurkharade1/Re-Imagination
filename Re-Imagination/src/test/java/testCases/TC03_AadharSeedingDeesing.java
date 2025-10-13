@@ -65,7 +65,7 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 		as.ClickOnProceedCustAuth();
 		
 		if(as.ReceiptPage()) {
-			captureScreen("DeSeeding");
+			captureScreen(driver, "DeSeeding");
 			Thread.sleep(3000);		
 			as.clickOnAnotherPayment();
 			Assert.assertTrue(true);
