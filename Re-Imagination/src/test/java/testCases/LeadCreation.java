@@ -2,6 +2,8 @@ package testCases;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,7 +17,7 @@ public class LeadCreation extends BaseClass {
 	//public static void main(String[] args) throws InterruptedException, IOException {
 		
 	@Test
-	public void LeadCreate() throws InterruptedException {	
+	public void LeadCreate() throws InterruptedException, IOException {	
 		//Lc.login();
 		
 		LeadCreationA Lc = new LeadCreationA(driver);
@@ -26,7 +28,7 @@ public class LeadCreation extends BaseClass {
 		Lc.clickOnLeadCreationMenu();
 		//Title dropdown
 		Lc.selectTitle(Lc.getRandomTitle());
-		Lc.enterFirstMiddleLastName(Lc.randomeString(), Lc.randomeString(), Lc.randomeString());
+		Lc.enterFirstMiddleLastName(Lc.randomeString(), Lc.randomeString(), Lc.randomeString()); //First,Middle,Last Names
 		Lc.selectGender(Lc.getRandomGender());  //Male, Female
 		//Lc.enterMobileNo(Lc.randomeNumber(9));
 		Lc.enterMobileNo(Lc.randomeNumber(9));

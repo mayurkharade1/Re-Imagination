@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import javax.swing.JOptionPane;
@@ -19,13 +21,13 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-import pageObjects.AadharSeedingDeseeding;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 
@@ -33,6 +35,7 @@ public class BaseClass {
 	public WebDriver driver;
 	public Logger logger;
 	public Properties p;
+	
 	
 
 	@BeforeClass
@@ -45,15 +48,23 @@ public class BaseClass {
 		p = new Properties();
 		p.load(file);
 		
+		Map<String, Object> prefs = new HashMap<>();
+		prefs.put("profile.default_content_setting_values.device_discovery", 1);
+		 
+		
 		switch(br.toLowerCase()) 
 		{
-		case "chrome" : driver = new ChromeDriver(); break;
+		case "chrome" : ChromeOptions options = new ChromeOptions();
+	     				options.setExperimentalOption("prefs", prefs);
+						driver = new ChromeDriver(options); 
+						break;
 		case "edge" : driver = new EdgeDriver(); break;
 		default : System.out.println("Browser Not Provided"); break;
 		}
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		// 1 = Allow device
 
 		driver.get(p.getProperty("AppUrl"));
 		
@@ -62,7 +73,7 @@ public class BaseClass {
 		lp.enterUserID(p.getProperty("UserId"));
 		lp.enterPassword(p.getProperty("Password"));
 		lp.enterCapcha();
-		lp.clickProceed();
+		lp.clickProceed(); 
 		lp.clickFpScanner();
 	}
 	
@@ -72,7 +83,7 @@ public class BaseClass {
 		driver = new ChromeDriver();
 		driver.get("https://kioskiat.sbiuat.bank.in/unifyapp/login/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));	
 		
 		JavascriptExecutor js=(JavascriptExecutor) driver;
 		
@@ -93,12 +104,12 @@ public class BaseClass {
 		
 		Thread.sleep(5000);
 	}
-//	Properties property() throws IOException{
-//		FileReader file=new FileReader(".//src//test//resources//config.properties");
-//		p = new Properties();
-//		p.load(file);
-//		return p;
-//	}
+	Properties property() throws IOException{
+		FileReader file=new FileReader(".//src//test//resources//config.properties");
+		p = new Properties();
+		p.load(file);
+		return p;
+	}
 	
 	/*		Properties p;
 	FileReader file=new FileReader(".//src//test//resources//config.properties");
@@ -116,7 +127,7 @@ public class BaseClass {
 		
 	}
 	//@AfterTest
-	public String captureScreen(String tname) throws IOException {
+	public String captureScreen(WebDriver driver, String tname) throws IOException {
 
 		String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 				

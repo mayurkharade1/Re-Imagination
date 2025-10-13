@@ -2,13 +2,14 @@ package pageObjects;
 
 import javax.swing.JOptionPane;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
+	JavascriptExecutor js = ((JavascriptExecutor)driver);
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -49,10 +50,18 @@ public class LoginPage extends BasePage {
 	}
 	public void clickProceed() throws InterruptedException {
 		
-		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", btnProceed);
+		js.executeScript("arguments[0].scrollIntoView(true);", btnProceed);
 		Thread.sleep(500);
 		btnProceed.click();
-		
+		try
+		{	
+			Thread.sleep(5000);
+			Alert al = driver.switchTo().alert();
+				al.accept();;
+		}
+		catch(Exception e) {
+			
+		}
 	}
 	public void clickFpScanner() {
 		fpIcon.click();

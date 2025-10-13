@@ -7,8 +7,8 @@
       <class name="testCases.LeadCreation">
         <methods>
           <include name="tearDown"/>
+          <include name="Login"/>
           <include name="LeadCreate"/>
-          <include name="login"/>
         </methods>
       </class> <!-- testCases.LeadCreation -->
     </classes>

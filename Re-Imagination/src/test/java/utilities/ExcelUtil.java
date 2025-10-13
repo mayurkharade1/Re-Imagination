@@ -13,7 +13,7 @@ public class ExcelUtil {
         try (FileInputStream fis = new FileInputStream(new File(filePath));
              Workbook workbook = new XSSFWorkbook(fis)) {
 
-            Sheet sheet = workbook.getSheetAt(1);
+            Sheet sheet = workbook.getSheetAt(0);
             Row row = sheet.getRow(rowNumber - 1); // 0-based index
 
             if (row != null) {

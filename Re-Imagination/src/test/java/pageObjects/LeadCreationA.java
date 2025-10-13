@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.io.FileReader;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 import java.util.Random;
@@ -17,17 +18,21 @@ import org.openqa.selenium.support.ui.Select;
 
 import testBase.BaseClass;
 import utilities.ExcelUtil;
+import utilities.ExcelUtility;
 
 public class LeadCreationA extends BasePage {
 	
 	//WebDriver driver;
 	JavascriptExecutor js=(JavascriptExecutor) driver;
-	public Properties p;
+	//public Properties p;
 	public String ProductType;
 	public String ProductCategory;
 	public String Product;
 	public boolean n=true;
+	String Leadid;
+	int rownum;
 	BaseClass baseClass = new BaseClass();
+	//ExcelUtility ex= new ExcelUtility(baseClass.p.getProperty("ExcelPath"));
 	
 	public LeadCreationA(WebDriver driver) {
 		super(driver);
@@ -36,17 +41,17 @@ public class LeadCreationA extends BasePage {
 	public void selectScenario() {
 	 String rowNo = JOptionPane.showInputDialog("Enter Case Number: ");
 		
-	 int num = Integer.parseInt(rowNo);
+	 rownum = Integer.parseInt(rowNo);
 	
-	 String[] data = ExcelUtil.getExcelRowData(num);
+	 String[] data = ExcelUtil.getExcelRowData(rownum);
 	 
 	  ProductType = data[0];
 	  ProductCategory = data[1];
 	  Product = data[2];
 	 
-	 System.out.println("ProductType: " + data[0]);
-     System.out.println("ProductCategory: " + data[1]);
-     System.out.println("Product: " + data[2]);
+	 System.out.println("ProductType= " + data[0]);
+     System.out.println("ProductCategory= " + data[1]);
+     System.out.println("Product= " + data[2]);
 	}
 	
 	public void login() throws InterruptedException{
@@ -259,8 +264,9 @@ public class LeadCreationA extends BasePage {
 		}
 		
 	}
-	public void clickProceed()
+	public void clickProceed() throws IOException
 	{
+		baseClass.captureScreen(driver, "LeadSelected");
 		WebElement btnProceed = driver.findElement(By.xpath("//p[text()='Proceed']"));
 		
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btnProceed);
@@ -277,10 +283,11 @@ public class LeadCreationA extends BasePage {
 		boolean successMsg=driver.findElement(By.xpath("//p[text()='Lead Creation Successful']")).isDisplayed();
 		if (successMsg) {
 			System.out.println("Lead Creation Successful");
-			baseClass.captureScreen("LeadCreation_Success");
+			baseClass.captureScreen(driver, "LeadCreation_success");
 			WebElement LeadId=driver.findElement(By.xpath("(//p)[7]"));
-			String id =LeadId.getText();
-			System.out.println("Lead Id : "+id);
+			Leadid =LeadId.getText();
+			System.out.println("Lead Id : "+Leadid);
+			ex.setCellData("Sheet1", rownum-1, 7, Leadid);
 			Thread.sleep(2000);
 			WebElement btnAnotherpy=driver.findElement(By.xpath("//p[text()='ANOTHER PAYMENT']"));
 			btnAnotherpy.click();
@@ -294,7 +301,7 @@ public class LeadCreationA extends BasePage {
 				WebElement btn = driver.findElement(By.xpath("//p[text()='OK']"));
 				if (btn.isDisplayed()) 
 				{
-					baseClass.captureScreen("LeadCreation_Fail");
+					baseClass.captureScreen(driver, "LeadCreation_Fail");
 					btn.click();
 				}}
 				catch(Exception e) {
@@ -305,7 +312,7 @@ public class LeadCreationA extends BasePage {
 		}
 		catch(Exception e)
 		{
-			
+			e.printStackTrace();
 		}
 		}
 
@@ -366,5 +373,6 @@ public class LeadCreationA extends BasePage {
 	            //driver.close();
 	        }
 	}
+	
 	
 }
