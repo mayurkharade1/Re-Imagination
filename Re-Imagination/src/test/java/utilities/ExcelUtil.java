@@ -21,12 +21,13 @@ public class ExcelUtil {
                 rowData[1] = getCellValue(row.getCell(3)); // Column 4 (D)
                 rowData[2] = getCellValue(row.getCell(5)); // Column 6 (F)
             }
-
+            fis.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         return rowData;
+        
     }
 
     private static String getCellValue(Cell cell) {
