@@ -288,7 +288,7 @@ public class LeadCreationA extends BasePage {
 			Leadid =LeadId.getText();
 			System.out.println("Lead Id : "+Leadid);
 			ex.setCellData("Sheet1", rownum-1, 7, Leadid);
-			//ex.fillGreenColor("Sheet1", rownum-1 , 8);
+			ex.fillGreenColor("Sheet1", rownum-1 , 8);
 			Thread.sleep(2000);
 			WebElement btnAnotherpy=driver.findElement(By.xpath("//p[text()='ANOTHER PAYMENT']"));
 			btnAnotherpy.click();
@@ -304,8 +304,10 @@ public class LeadCreationA extends BasePage {
 				{
 					baseClass.captureScreen(driver, "LeadCreation_Fail");
 					btn.click();
-				}}
-				catch(Exception e) {
+				}
+				}
+				catch(Exception e) 
+				{
 					
 				}
 						
