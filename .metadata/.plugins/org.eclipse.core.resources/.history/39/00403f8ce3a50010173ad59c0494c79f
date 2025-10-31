@@ -1,0 +1,351 @@
+package pageObjects;
+
+import java.io.FileReader;
+import java.time.Duration;
+import java.util.Properties;
+import java.util.Random;
+
+import javax.swing.JOptionPane;
+
+import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import utilities.ExcelUtil;
+
+public class LeadCreationA extends BasePage {
+	
+	//WebDriver driver;
+	JavascriptExecutor js=(JavascriptExecutor) driver;
+	public Properties p;
+	public String ProductType;
+	public String ProductCategory;
+	public String Product;
+	public boolean n=true;
+	
+	public LeadCreationA(WebDriver driver) {
+		super(driver);
+	}
+	
+	public void selectScenario() {
+	 String rowNo = JOptionPane.showInputDialog("Enter Case Number: ");
+		
+	 int num = Integer.parseInt(rowNo);
+	
+	 String[] data = ExcelUtil.getExcelRowData(num);
+	 
+	  ProductType = data[0];
+	  ProductCategory = data[1];
+	  Product = data[2];
+	 
+	 System.out.println("ProductType: " + data[0]);
+     System.out.println("ProductCategory: " + data[1]);
+     System.out.println("Product: " + data[2]);
+	}
+	
+	public void login() throws InterruptedException{
+		
+		driver = new ChromeDriver();
+		driver.get("https://kioskiat.sbiuat.bank.in/unifyapp/login/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));		
+		
+		JavascriptExecutor js=(JavascriptExecutor) driver;
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter User ID']")).sendKeys("3K580036");
+		driver.findElement(By.xpath("//input[@placeholder='Enter Password']")).sendKeys("dfi@1234");
+		WebElement txtCaptcha =driver.findElement(By.xpath("//input[@placeholder='Enter Captcha']"));
+		String captcha;
+		captcha = JOptionPane.showInputDialog("Please Enter The Captcha");
+		txtCaptcha.sendKeys(captcha);
+		
+		driver.findElement(By.xpath("//button[text()='PROCEED']")).click();
+		
+		driver.findElement(By.xpath("//img[@alt='FingerprintFirstNew']")).click();
+		
+		Thread.sleep(5000);
+	}
+
+	public void clickOnLeadCreationMenu() {
+		driver.findElement(By.xpath("//a[text()='Lead Creation']")).click();
+		driver.findElement(By.xpath("(//a[text()='Lead Creation'])[2]")).click();
+	}
+	
+	public void selectTitle(String titlecode){
+		WebElement drpTitle = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[1]"));
+		Select title= new Select(drpTitle);
+		title.selectByValue(titlecode);
+	}
+	
+	 public String getRandomTitle() {
+	        // Define values inside the method
+	        String[] values = {"0001", "0002", "0007", "0004", "0009"};
+
+	        // Generate a random index
+	        Random random = new Random();
+	        int index = random.nextInt(values.length);
+
+	        // Return random value
+	        return values[index];
+	    }
+	
+	public void enterFirstMiddleLastName(String Fname, String Mname, String Lname) {
+		
+		driver.findElement(By.xpath("//input[@placeholder='Enter First Name']")).sendKeys(Fname);
+		driver.findElement(By.xpath("//input[@placeholder='Enter Middle Name']")).sendKeys(Mname);
+		driver.findElement(By.xpath("//input[@placeholder='Enter Last Name']")).sendKeys(Lname);
+	}
+	
+	public void selectGender(String gender)
+	{
+		WebElement drpGender = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[2]"));
+		Select Gender= new Select(drpGender);
+		Gender.selectByValue(gender);
+	}
+	
+	 public String getRandomGender() {
+	        // Define values inside the method
+	        String[] values = {"Male", "Female"};
+
+	        // Generate a random index
+	        Random random = new Random();
+	        int index = random.nextInt(values.length);
+
+	        // Return random value
+	        return values[index];
+	    }
+	
+	
+	public void enterMobileNo(String MobNO){
+		driver.findElement(By.xpath("//input[@placeholder='Enter Mobile Name']")).sendKeys(MobNO);
+	}
+	
+	public String randomDOB() {
+		// Define values inside the method
+        String[] values = {"Male", "Female"};
+
+        // Generate a random index
+        Random random = new Random();
+        int index = random.nextInt(values.length);
+
+        // Return random value
+        return values[index];
+	}
+	
+	public void selectDate(String Date) throws InterruptedException {
+	 	   
+		try {
+				// value from Excel
+				String[] parts = Date.split("/");
+				String day = parts[0];
+				String month = parts[1];
+				String year = parts[2];	
+				//System.out.println("Date : "+day +",Month : "+month+",Year : " +year);
+	    WebElement calendarIcon = driver.findElement(By.xpath("//button[contains(@aria-label,'Choose date')]"));
+	    calendarIcon.click();
+	    Thread.sleep(1000); // wait for the calendar to appear
+
+	   
+	    WebElement monthYearLabel = driver.findElement(By.xpath("//div[contains(@class,'MuiPickersCalendarHeader-labelContainer')]"));
+	    monthYearLabel.click();
+	    Thread.sleep(1000);
+
+	    WebElement targetYear = driver.findElement(By.xpath("//button[@type='button' and text()='"+year+"']"));
+	   // ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", targetYear);
+	    targetYear.click();
+	    Thread.sleep(1000);
+
+	    WebElement previousMontharrow = driver.findElement(By.xpath("//button[@aria-label='Previous month']"));
+	   
+	   String monthYear= month+" "+year;
+	for(int i=0;i<11;i++)
+	{
+		 WebElement yearMonth= driver.findElement(By.xpath("(//div[contains(@class,'MuiPickersCalendarHeader-label')])[2]"));
+		if(!yearMonth.getText().equals(monthYear))
+		{
+			previousMontharrow.click();
+		}
+	}
+	    
+	    WebElement targetDay = driver.findElement(By.xpath("//button[@role='gridcell' and normalize-space()='" + day + "']"));
+	    targetDay.click();
+		}
+	    catch(Exception e)
+		{
+	    	e.getStackTrace();
+		}
+	}
+	
+	public void enterAddOneTwo(String AddOne, String AddTwo) {
+		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 1']")).click();
+		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 1']")).sendKeys(AddOne);
+		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 2']")).sendKeys(AddTwo);
+	}
+	
+	public void selectState(String state){
+		WebElement drpState = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[3]"));
+		Select State= new Select(drpState);
+		State.selectByValue(state);
+	}
+
+	public void enterPinCode(String Pincode){
+		driver.findElement(By.xpath("//input[@placeholder='Enter PinCode']")).sendKeys(Pincode);
+	}
+	
+	public void selectProductType(String ProductType){
+		WebElement drpProductType = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[4]"));
+		Select ProductTyp= new Select(drpProductType);
+		ProductTyp.selectByVisibleText(ProductType);
+		if (ProductType.equalsIgnoreCase("Mudra Loan")) {
+			driver.findElement(By.xpath("//input[@placeholder='Enter Business Unit']")).sendKeys("Buss Name");
+		}
+	}
+	
+	public void selectProductCategory(String ProductCategory){
+		WebElement drpProductCategory = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[5]"));
+		Select ProductCategor= new Select(drpProductCategory);
+		ProductCategor.selectByVisibleText(ProductCategory);
+	}
+	
+	public void  selectProduct(String product){
+		WebElement drpProduct = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[6]"));
+		Select Product= new Select(drpProduct);
+		Product.selectByVisibleText(product);
+	}
+	
+	public void  enterLoadAmount(String LoanAmount){
+		driver.findElement(By.xpath("//input[@placeholder='Enter Loan Amount']")).sendKeys(LoanAmount);
+	}
+	
+	public void selectCustomerIntrest(String Interest){
+	WebElement drpCustomerIntrest = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[7]"));
+	Select CustomerIntrest= new Select(drpCustomerIntrest);
+	CustomerIntrest.selectByVisibleText(Interest);
+	}
+	
+	 public String getInterest() {
+	 
+	        String[] values = {"Hot", "Cold","Warm"};
+	        Random random = new Random();
+	        int index = random.nextInt(values.length);
+	        return values[index];
+	    }
+	
+	public void enterBranchName(String BranchName){
+		driver.findElement(By.xpath("//input[@placeholder='Enter Preferred Branch']")).sendKeys(BranchName);
+	}
+	
+	
+	public void selectExistingCustomer(String value, String cif) throws InterruptedException
+	{
+		Thread.sleep(2000);
+		if(value.equalsIgnoreCase("No"))
+		{
+			driver.findElement(By.xpath("//input[@id='No']")).click();
+		}
+		else 
+		{	
+		//driver.findElement(By.xpath("//input[@id='Yes']")).click();
+		driver.findElement(By.xpath("//input[@placeholder='Enter CIF number ']")).sendKeys(cif);		
+		}
+		
+	}
+	public void clickProceed()
+	{
+		WebElement btnProceed = driver.findElement(By.xpath("//p[text()='Proceed']"));
+		
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", btnProceed);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click()", btnProceed);
+		
+		if (btnProceed.isEnabled()) {
+			//btnProceed.click();
+		}
+	}
+	
+	public void clickAnotherPaymentsReceipt()
+	{
+		try{
+		boolean successMsg=driver.findElement(By.xpath("//p[text()='Lead Creation Successful']")).isDisplayed();
+		if (successMsg) {
+			System.out.println("Lead Creation Successful");
+			WebElement LeadId=driver.findElement(By.xpath("(//p)[7]"));
+			String id =LeadId.getText();
+			System.out.println("Lead Id : "+id);
+			WebElement btnAnotherpy=driver.findElement(By.xpath("//p[text()='ANOTHER PAYMENT']"));
+			btnAnotherpy.click();
+			
+		}
+		else
+		{
+			System.out.println("Lead Creation Failed");
+		}
+		}
+		catch(Exception e)
+		{
+			
+		}
+		}
+	
+	public void clickOKErrorPopup() throws InterruptedException{
+		try {
+		WebElement btn = driver.findElement(By.xpath("//p[text()='OK']"));
+		if (btn.isDisplayed()) 
+		{
+			//Thread.sleep(3000);
+			btn.click();
+		}}
+		catch(Exception e) {
+			
+		}
+		
+	}
+	void tearDown() {
+		
+	}
+	
+	public String randomeString()
+	{
+		String generatedString=RandomStringUtils.randomAlphabetic(5).toLowerCase();
+		return generatedString;
+	}
+	
+	public String randomeNumber(int num)
+	{
+		String generatedString=RandomStringUtils.randomNumeric(num);
+		String Number= "8"+generatedString;
+		return Number;
+	}
+	public String randomePincode()
+	{
+		String generatedString=RandomStringUtils.randomNumeric(5);
+		String Number= "4"+generatedString;
+		return Number;
+	}
+	
+	public void nextCaseAlert() {
+	 int response = JOptionPane.showConfirmDialog(
+	            null,
+	            "Do you want to proceed for next case?",
+	            "Confirm",
+	            JOptionPane.YES_NO_OPTION,
+	            JOptionPane.QUESTION_MESSAGE
+	        );
+
+	        // Check user response
+	        if (response == JOptionPane.YES_OPTION) {
+	            // User clicked YES
+	        	n=true;
+	        	
+	            System.out.println("Continue");
+	        } else if (response == JOptionPane.NO_OPTION) {
+	            // User clicked NO
+	        	n=false;
+	            //driver.close();
+	        }
+	}
+	
+}

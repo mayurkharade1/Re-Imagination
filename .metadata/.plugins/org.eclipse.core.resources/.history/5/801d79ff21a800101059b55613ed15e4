@@ -1,0 +1,28 @@
+AppUrl=https://kioskiat.sbiuat.bank.in/unifyapp/login/
+UserId=3K580036
+Password=dfi@1234
+AgentTxnPassword=dfi@1234
+
+
+ExcelPath=C:\\Users\\Lenovo\\eclipse-workspace\\Re-Imagination\\testdata\\LC_TestScenarios.xlsx
+----------
+SeedingUid=731817444183
+SeedingAcctNo=50003485751
+---------
+
+
+-----LeadCreation------
+
+A= Home loan
+B= Housing loan
+C= NEW : Home Loan To NON Salaried
+
+I=Life Insurance
+
+M1= Mudra Loan
+M2= SME
+M3= Pradhan Mantri MUDRA Yojana
+
+A1= Agri gold loan
+A2= CC-Agri
+A3= Kisan Credit Card

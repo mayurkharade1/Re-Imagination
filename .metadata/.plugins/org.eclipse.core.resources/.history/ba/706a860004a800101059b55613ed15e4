@@ -1,0 +1,72 @@
+package pageObjects;
+
+import javax.swing.JOptionPane;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class LoginPage extends BasePage {
+	JavascriptExecutor js = ((JavascriptExecutor)driver);
+
+	public LoginPage(WebDriver driver) {
+		super(driver);
+	}
+
+	@FindBy(xpath = "//input[@placeholder='Enter User ID']")
+	WebElement txtUserID;
+
+	@FindBy(xpath = "//input[@placeholder='Enter Password']")
+	WebElement txtPassword;
+
+	@FindBy(xpath = "//input[@placeholder='Enter Captcha']")
+	WebElement txtCaptcha;
+
+	@FindBy(xpath = "//button[text()='PROCEED']")
+	WebElement btnProceed;
+	
+	@FindBy(xpath = "//img[@alt='FingerprintFirstNew']")
+	WebElement fpIcon;
+	
+	
+
+	public void enterUserID(String userId) {
+
+		txtUserID.sendKeys(userId);
+	}
+
+	public void enterPassword(String passWord) {
+
+		txtPassword.sendKeys(passWord);
+	}
+	
+	public void enterCapcha() {
+
+		String captcha;
+		captcha = JOptionPane.showInputDialog("Please Enter The Captcha");
+		txtCaptcha.sendKeys(captcha);
+	}
+	public void clickProceed() throws InterruptedException {
+		
+		js.executeScript("arguments[0].scrollIntoView(true);", btnProceed);
+		Thread.sleep(500);
+		btnProceed.click();
+		try
+		{	
+			Thread.sleep(5000);
+			Alert al = driver.switchTo().alert();
+				al.accept();
+		}
+		catch(Exception e) {
+			
+		}
+	}
+	public void clickFpScanner() {
+		fpIcon.click();
+		
+	}
+
+}

@@ -63,7 +63,7 @@ public class BaseClass {
 		}
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		// 1 = Allow device
 
 		driver.get(p.getProperty("AppUrl"));

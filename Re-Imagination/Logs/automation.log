@@ -1,13 +1,13 @@
-16:31:47.159 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+16:49:00.099 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
   C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
 
-16:33:41.645 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+16:50:03.126 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
   C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
 
-19:09:41.519 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+16:51:52.221 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
   C:\Users\Lenovo\eclipse-workspace\Re-Imagination\testng.xml
 
-19:10:48.925 [main] ERROR org.apache.poi.openxml4j.opc.internal.ZipContentTypeManager - Cannot write: [Content_Types].xml in Zip !
+16:53:17.167 [main] ERROR org.apache.poi.openxml4j.opc.internal.ZipContentTypeManager - Cannot write: [Content_Types].xml in Zip !
 java.io.IOException: Stream Closed
 	at java.base/java.io.FileOutputStream.writeBytes(Native Method) ~[?:?]
 	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:367) ~[?:?]
