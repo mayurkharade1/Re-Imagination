@@ -1,5 +1,7 @@
 package testCases;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -45,9 +47,9 @@ public class IAO_Continue_Customer_Creation extends BaseClass{
 		if (ao.VerifySucessMsg().equalsIgnoreCase("Initial Deposit Successful"))
 		{
 			ao.captureScreen("Ao_Receipt");
-			Assert.assertTrue(true);
+			AssertJUnit.assertTrue(true);
 		}
-		Assert.assertEquals(ao.VerifySucessMsg(), "Initial Deposit Successful");
+		AssertJUnit.assertEquals(ao.VerifySucessMsg(), "Initial Deposit Successful");
 	} 
 	
 	catch (Exception e) {

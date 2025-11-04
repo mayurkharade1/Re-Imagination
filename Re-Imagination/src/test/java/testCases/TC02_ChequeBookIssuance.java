@@ -1,5 +1,7 @@
 package testCases;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -39,12 +41,12 @@ public class TC02_ChequeBookIssuance extends BaseClass{
 		ch.clickOnproceedCustAuth();
 		logger.info("** Clicked on Procced after capturing FP***");
 		
-		Assert.assertEquals(ch.msgOnRecipt(), "Cheque Book Request initiated successfully");
+		AssertJUnit.assertEquals(ch.msgOnRecipt(), "Cheque Book Request initiated successfully");
 		}
 		catch(Exception e){
 			
 			logger.error("Test Failed");
-			Assert.fail();
+			AssertJUnit.fail();
 		}
 		 
 		

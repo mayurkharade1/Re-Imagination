@@ -1,5 +1,7 @@
 package testCases;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.testng.Assert;
 
 import java.io.IOException;
@@ -38,7 +40,7 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 			//captureScreen("Seeding");
 			Thread.sleep(3000);
 			as.clickOnAnotherPayment();
-			Assert.assertTrue(true);
+			AssertJUnit.assertTrue(true);
 			
 		}		
 	}
@@ -68,7 +70,7 @@ public class TC03_AadharSeedingDeesing extends BaseClass
 			captureScreen(driver, "DeSeeding");
 			Thread.sleep(3000);		
 			as.clickOnAnotherPayment();
-			Assert.assertTrue(true);
+			AssertJUnit.assertTrue(true);
 			
 		}		
 	}	

@@ -1,5 +1,7 @@
 package testCases;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
@@ -64,7 +66,7 @@ public class LeadCreation extends BaseClass {
 //		} 
 		
 	}
-		Assert.assertTrue(true);
+		AssertJUnit.assertTrue(true);
 	}
 	
 	

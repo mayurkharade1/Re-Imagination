@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.testng.annotations.AfterMethod;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.Duration;
@@ -332,6 +333,7 @@ public class LeadCreationA extends BasePage {
 		}
 		
 	}
+	@AfterMethod
 	void tearDown() {
 		
 	}

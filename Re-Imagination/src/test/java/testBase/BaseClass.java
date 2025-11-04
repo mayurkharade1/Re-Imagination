@@ -1,5 +1,6 @@
 package testBase;
 
+import org.testng.annotations.AfterMethod;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -128,6 +129,7 @@ public class BaseClass {
     }
 	
 	
+	@AfterMethod
 	@AfterClass
 	public void tearDown() throws InterruptedException 
 	{
