@@ -40,7 +40,7 @@ public class LeadCreationA extends BasePage {
 	}
 	
 	public void selectScenario() {
-	 String rowNo = JOptionPane.showInputDialog("Enter Case Number: ");
+	 String rowNo = JOptionPane.showInputDialog("Enter Case Number(3-15): ");
 		
 	 rownum = Integer.parseInt(rowNo);
 	
@@ -82,8 +82,9 @@ public class LeadCreationA extends BasePage {
 	}
 
 	public void clickOnLeadCreationMenu() {
+		driver.findElement(By.xpath("//a[text()='Ease Banking']")).click();
+		driver.findElement(By.xpath("//a[text()='Lead Generation']")).click();
 		driver.findElement(By.xpath("//a[text()='Lead Creation']")).click();
-		driver.findElement(By.xpath("(//a[text()='Lead Creation'])[2]")).click();
 	}
 	
 	public void selectTitle(String titlecode){

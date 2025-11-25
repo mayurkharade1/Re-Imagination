@@ -9,7 +9,7 @@ public class ExcelUtil {
 
     public static String[] getExcelRowData(int rowNumber) {
         String[] rowData = new String[3]; // Columns 2, 4, 6
-        String filePath = "C:\\Users\\Lenovo\\eclipse-workspace\\Re-Imagination\\testdata\\LC_TestScenarios.xlsx";
+        String filePath = "D:\\Projects\\Re-Imagination\\Re-Imagination\\testdata\\LC_TestScenarios_new.xlsx";
         try (FileInputStream fis = new FileInputStream(new File(filePath));
              Workbook workbook = new XSSFWorkbook(fis)) {
 
