@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RestAssuredAPI.RestAssuredAPI.MasterData">
+      <class name="RestAssuredAPI.AccountOpening">
         <methods>
-          <include name="CityMaster"/>
+          <include name="CifAccountCreation"/>
         </methods>
-      </class> <!-- RestAssuredAPI.RestAssuredAPI.MasterData -->
+      </class> <!-- RestAssuredAPI.AccountOpening -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

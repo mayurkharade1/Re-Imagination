@@ -25,7 +25,7 @@ public class IAO_Continue_Customer_Creation extends BaseClass{
 		AccountOpeningEkyc ao = new AccountOpeningEkyc(driver);
 		ao.EnterUIDNo("731817444183");
 		
-		ao.clickOnProceedafterUIDorRefNo();				logger.info("** Clicked on Proceed after UID ***");
+		ao.clickOnProceedafterUIDorRefNo();			logger.info("** Clicked on Proceed after UID ***");
 		ao.clickOnFpScanner();						logger.info("** Clicked on FP Scanner Button ***");
 		ao.clickOnProceedFpCapture();				logger.info("** Clicked on Proceed Fp Capture ***");
 		ao.clickOnOkButtonPopup();					logger.info("** Clicked on Ok Button Popup ***");

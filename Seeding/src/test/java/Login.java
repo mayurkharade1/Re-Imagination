@@ -58,6 +58,7 @@ public class Login {
 		captcha = JOptionPane.showInputDialog("Please Enter The Captcha");
 		WebElement Captcha = wd.findElement(By.cssSelector("input[placeholder='Enter Captcha']"));
 		Captcha.sendKeys(captcha);
+	
 		
 		//Proceed Button
 		WebElement Button= wd.findElement(By.xpath("//div[@class='col-9']"));

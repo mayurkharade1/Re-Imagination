@@ -26,7 +26,7 @@ public class BrokenLinks {
 		List<WebElement> allLinks = driver.findElements(By.tagName("a"));
 		
 		int noOfLinks=allLinks.size();
-		System.out.println("Total Links on Page : "+noOfLinks);
+		System.out.println("Total Links on Page : "+noOfLinks);  
 		
 		int brokenlink=0;
 		int nonBroken=0;

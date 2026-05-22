@@ -8,7 +8,11 @@ public class Stringss {
 		
 		System.out.println(s.length());
 		
-		
+		String[] sa=s.split(" ");
+		System.out.println(sa[0]);
+		for (String a : sa) {
+            System.out.println(a);
+        }
 
 	}
 

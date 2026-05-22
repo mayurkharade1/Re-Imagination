@@ -6,6 +6,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\SBI\Desktop\Aishwarya"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -17,6 +18,7 @@
 		</list>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="internal"/>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
@@ -28,10 +30,13 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.demo.SpringMVCDemo"/>
 		</list>
 		<list key="groupId">
+			<item value="com.demo"/>
 		</list>
 		<list key="artifactId">
+			<item value="SpringMVCDemo"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -47,12 +52,10 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="Re-Imagination"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
-			<item value="Re-Imagination"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

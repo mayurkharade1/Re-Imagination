@@ -2,7 +2,7 @@
 public class temp {
 
 	public static void main(String[] args) {
-	    int result = sum(5);
+	    int result = sum(96);
 	    System.out.println(result);
 	  }
 	  public static int sum(int k) {

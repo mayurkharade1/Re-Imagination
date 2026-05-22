@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 
 public class ExcelUtil {
 
+	
     public static String[] getExcelRowData(int rowNumber) {
         String[] rowData = new String[3]; // Columns 2, 4, 6
         String filePath = "D:\\Projects\\Re-Imagination\\Re-Imagination\\testdata\\LC_TestScenarios_new.xlsx";
@@ -21,6 +22,7 @@ public class ExcelUtil {
                 rowData[1] = getCellValue(row.getCell(3)); // Column 4 (D)
                 rowData[2] = getCellValue(row.getCell(5)); // Column 6 (F)
             }
+            workbook.close();
             fis.close();
         } catch (Exception e) {
             e.printStackTrace();

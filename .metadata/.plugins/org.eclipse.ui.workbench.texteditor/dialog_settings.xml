@@ -2,4 +2,10 @@
 <section name="Workbench">
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
+	<section name="java.lang.Class">
+		<list key="findhistory">
+			<item value="driv"/>
+			<item value="dash"/>
+		</list>
+	</section>
 </section>

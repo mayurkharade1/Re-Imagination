@@ -4,8 +4,12 @@ import org.testng.annotations.AfterMethod;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 import java.util.Properties;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import javax.swing.JOptionPane;
 
@@ -40,7 +44,7 @@ public class LeadCreationA extends BasePage {
 	}
 	
 	public void selectScenario() {
-	 String rowNo = JOptionPane.showInputDialog("Enter Case Number(3-15): ");
+	 String rowNo = JOptionPane.showInputDialog("Enter Case Number(3-23): ");
 		
 	 rownum = Integer.parseInt(rowNo);
 	
@@ -81,11 +85,19 @@ public class LeadCreationA extends BasePage {
 		Thread.sleep(5000);
 	}
 
-	public void clickOnLeadCreationMenu() {
-		driver.findElement(By.xpath("//a[text()='Ease Banking']")).click();
+	public void clickOnLeadCreationMenu() throws InterruptedException {
+		//New Dashboard
+		Thread.sleep(2000);
+		WebElement el=driver.findElement(By.xpath("//a[text()='Ease Banking']"));
+		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", el);
+		el.click();
 		driver.findElement(By.xpath("//a[text()='Lead Generation']")).click();
 		driver.findElement(By.xpath("//a[text()='Lead Creation']")).click();
+		//Old Dashboard
+		/*driver.findElement(By.xpath("//a[text()='Lead Creation']")).click();
+		driver.findElement(By.xpath("(//a[text()='Lead Creation'])[2]")).click();*/
 	}
+	
 	
 	public void selectTitle(String titlecode){
 		WebElement drpTitle = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[1]"));
@@ -95,7 +107,7 @@ public class LeadCreationA extends BasePage {
 	
 	 public String getRandomTitle() {
 	        // Define values inside the method
-	        String[] values = {"0001", "0002", "0007", "0004", "0009"};
+	        String[] values = {"0001", "0002", "0003", "0004", "0007","0009"};
 
 	        // Generate a random index
 	        Random random = new Random();
@@ -151,7 +163,9 @@ public class LeadCreationA extends BasePage {
 	public void selectDate(String Date) throws InterruptedException {
 	 	   
 		try {
-				// value from Excel
+				
+			System.out.println("Selected DOB = "+ Date);
+			
 				String[] parts = Date.split("/");
 				String day = parts[0];
 				String month = parts[1];
@@ -192,17 +206,47 @@ public class LeadCreationA extends BasePage {
 		}
 	}
 	
-	public void enterAddOneTwo(String AddOne, String AddTwo) {
+	public String getRandomDOB() {
+        LocalDate start = LocalDate.of(1990, 1, 1);
+        LocalDate end = LocalDate.of(2002, 12, 31);
+
+        long startEpoch = start.toEpochDay();
+        long endEpoch = end.toEpochDay();
+
+        long randomDay = ThreadLocalRandom.current().nextLong(startEpoch, endEpoch + 1);
+
+        LocalDate randomDate = LocalDate.ofEpochDay(randomDay);
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MMMM/yyyy", Locale.ENGLISH);
+        return randomDate.format(formatter);
+    }
+	
+	public void enterRandomAddOneTwo() {
 		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 1']")).click();
-		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 1']")).sendKeys(AddOne);
-		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 2']")).sendKeys(AddTwo);
+		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 1']")).sendKeys(randomeString());
+		driver.findElement(By.xpath("//input[@placeholder='Enter Address Line 2']")).sendKeys(randomeString());
 	}
 	
 	public void selectState(String state){
 		WebElement drpState = driver.findElement(By.xpath("(//select[@class='select-dropdown'])[3]"));
 		Select State= new Select(drpState);
 		State.selectByValue(state);
+		System.out.println("Selected State = "+ state);
 	}
+	
+	public String getRandomState() {
+		 String[] STATES = {
+		        "ANDHRA PRADESH", "ARUNACHAL PRADESH", "ASSAM", "BIHAR",
+		        "CHHATTISGARH", "GOA", "GUJARAT", "HARYANA", "HIMACHAL PRADESH",
+		        "JHARKHAND", "KARNATAKA", "KERALA", "MADHYA PRADESH",
+		        "MAHARASHTRA", "MANIPUR", "MEGHALAYA", "MIZORAM", "NAGALAND",
+		        "ODISHA", "PUNJAB", "RAJASTHAN", "SIKKIM", "TAMILNADU",
+		        "TELANGANA", "TRIPURA", "UTTAR PRADESH",
+		        "WEST BENGAL"
+		    };
+        int index = ThreadLocalRandom.current().nextInt(STATES.length);
+        return STATES[index];
+    }
 
 	public void enterPinCode(String Pincode){
 		driver.findElement(By.xpath("//input[@placeholder='Enter PinCode']")).sendKeys(Pincode);
@@ -279,6 +323,8 @@ public class LeadCreationA extends BasePage {
 		}
 	}
 	
+
+	
 	public void clickAnotherPaymentsReceipt()
 	{
 		try{
@@ -291,7 +337,6 @@ public class LeadCreationA extends BasePage {
 			System.out.println("Lead Id : "+Leadid);
 			ex.setCellData("Sheet1", rownum-1, 7, Leadid);
 			ex.fillGreenColor("Sheet1", rownum-1 , 8);
-			Thread.sleep(2000);
 			WebElement btnAnotherpy=driver.findElement(By.xpath("//p[text()='ANOTHER PAYMENT']"));
 			btnAnotherpy.click();
 			
@@ -321,19 +366,7 @@ public class LeadCreationA extends BasePage {
 		}
 		}
 
-	public void clickOKErrorPopup() throws InterruptedException{
-		try {
-		WebElement btn = driver.findElement(By.xpath("//p[text()='OK']"));
-		if (btn.isDisplayed()) 
-		{
-			//Thread.sleep(3000);
-			btn.click();
-		}}
-		catch(Exception e) {
-			
-		}
-		
-	}
+
 	@AfterMethod
 	void tearDown() {
 		

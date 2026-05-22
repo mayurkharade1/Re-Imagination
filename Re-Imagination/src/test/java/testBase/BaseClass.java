@@ -59,7 +59,9 @@ public class BaseClass {
 	     				options.setExperimentalOption("prefs", prefs);
 						driver = new ChromeDriver(options); 
 						break;
-		case "edge" : driver = new EdgeDriver(); break;
+		case "edge" : 
+			System.setProperty("webdriver.edge.driver", "C:\\driver\\edgedriver_win64\\msedgedriver.exe");
+			driver = new EdgeDriver(); break;
 		default : System.out.println("Browser Not Provided"); break;
 		}
 		driver.manage().window().maximize();
@@ -68,14 +70,35 @@ public class BaseClass {
 		// 1 = Allow device
 
 		driver.get(p.getProperty("AppUrl"));
-		
+		//boolean a= true;
 		LoginPage lp = new LoginPage(driver);
-				
+		
+		//while(a) {
+		
 		lp.enterUserID(p.getProperty("UserId"));
 		lp.enterPassword(p.getProperty("Password"));
 		lp.enterCapcha();
 		lp.clickProceed(); 
+		Thread.sleep(2000);
 		lp.clickFpScanner();
+		//a=false;
+		
+		/*try {
+		boolean autherror= driver.findElement(By.xpath("//p[text()='Authorization Response Format Error. Contact Admin']")).isDisplayed();
+		if (autherror) {
+			driver.findElement(By.xpath("//p[text()='OK']")).click();
+			a=true;
+		}
+		else {
+			System.out.println("Login Working");
+		}
+		}
+		catch(Exception e) {
+			
+			
+		}
+		} */
+		
 	}
 	
 	
@@ -101,7 +124,7 @@ public class BaseClass {
 		Thread.sleep(500);
 		el.click();
 		
-		driver.findElement(By.xpath("//img[@alt='FingerprintFirstNew']")).click();
+		driver.findElement(By.xpath("//img[@alt='FingerprintFirstNew'.]")).click();
 		
 		Thread.sleep(5000);
 	}

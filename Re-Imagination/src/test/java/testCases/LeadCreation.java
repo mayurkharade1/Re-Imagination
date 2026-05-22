@@ -13,10 +13,7 @@ import pageObjects.LeadCreationA;
 import testBase.BaseClass;
 
 public class LeadCreation extends BaseClass {
-	// WebDriver driver;
-	
-	
-	//public static void main(String[] args) throws InterruptedException, IOException {
+
 		
 	@Test
 	public void LeadCreate() throws InterruptedException, IOException {	
@@ -29,14 +26,15 @@ public class LeadCreation extends BaseClass {
 		Lc.selectScenario();
 		Lc.clickOnLeadCreationMenu();
 		//Title dropdown
+		//Lc.selectExistingCustomer("Yes",Lc.randomeNumber(10));
+		Lc.selectExistingCustomer("No","");
 		Lc.selectTitle(Lc.getRandomTitle());
 		Lc.enterFirstMiddleLastName(Lc.randomeString(), Lc.randomeString(), Lc.randomeString()); //First,Middle,Last Names
 		Lc.selectGender(Lc.getRandomGender());  //Male, Female
-		//Lc.enterMobileNo(Lc.randomeNumber(9));
 		Lc.enterMobileNo(Lc.randomeNumber(9));
-		Lc.selectDate("19/May/1998");
-		Lc.enterAddOneTwo(Lc.randomeString(), Lc.randomeString());
-		Lc.selectState("MAHARASHTRA");
+		Lc.selectDate(Lc.getRandomDOB());
+		Lc.enterRandomAddOneTwo();
+		Lc.selectState(Lc.getRandomState());
 		Lc.enterPinCode(Lc.randomePincode());
 		
 		//ProductType dropdown
@@ -47,13 +45,12 @@ public class LeadCreation extends BaseClass {
 		Lc.selectProduct(Lc.Product);
 		Lc.enterLoadAmount(Lc.randomeNumber(5));
 		Lc.selectCustomerIntrest(Lc.getInterest());
-		Lc.selectExistingCustomer("Yes",Lc.randomeNumber(10));
+		//Lc.selectExistingCustomer("Yes",Lc.randomeNumber(10));
 		//Lc.selectExistingCustomer("No","");
 		Lc.clickProceed();
 		
 		Thread.sleep(2000);
 		Lc.clickAnotherPaymentsReceipt();
-		Lc.clickOKErrorPopup();	
 		Lc.nextCaseAlert();
 		
 		//Lc.n=false;

@@ -1,0 +1,72 @@
+13:51:49.909 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Projects\Re-Imagination\Re-Imagination\testng.xml
+
+13:53:32.447 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Projects\Re-Imagination\Re-Imagination\testng.xml
+
+19:19:32.190 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Projects\Re-Imagination\Re-Imagination\testng.xml
+
+19:19:51.383 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Projects\Re-Imagination\Re-Imagination\testng.xml
+
+19:20:52.636 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Projects\Re-Imagination\Re-Imagination\testng.xml
+
+19:22:20.302 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Projects\Re-Imagination\Re-Imagination\testng.xml
+
+19:23:23.155 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Projects\Re-Imagination\Re-Imagination\testng.xml
+
+12:53:22.219 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Projects\Re-Imagination\Re-Imagination\testng.xml
+
+12:54:57.426 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  D:\Projects\Re-Imagination\Re-Imagination\testng.xml
+
+17:55:48.428 [main] ERROR org.apache.poi.openxml4j.opc.internal.ZipContentTypeManager - Cannot write: [Content_Types].xml in Zip !
+java.io.IOException: Stream Closed
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method) ~[?:?]
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:352) ~[?:?]
+	at org.apache.commons.compress.archivers.zip.StreamCompressor$OutputStreamCompressor.writeOut(StreamCompressor.java:69) ~[commons-compress-1.28.0.jar:1.28.0]
+	at org.apache.commons.compress.archivers.zip.StreamCompressor.writeCounted(StreamCompressor.java:317) ~[commons-compress-1.28.0.jar:1.28.0]
+	at org.apache.commons.compress.archivers.zip.StreamCompressor.writeCounted(StreamCompressor.java:305) ~[commons-compress-1.28.0.jar:1.28.0]
+	at org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.writeCounted(ZipArchiveOutputStream.java:1665) ~[commons-compress-1.28.0.jar:1.28.0]
+	at org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.writeLocalFileHeader(ZipArchiveOutputStream.java:1719) ~[commons-compress-1.28.0.jar:1.28.0]
+	at org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.putArchiveEntry(ZipArchiveOutputStream.java:1238) ~[commons-compress-1.28.0.jar:1.28.0]
+	at org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.putArchiveEntry(ZipArchiveOutputStream.java:1181) ~[commons-compress-1.28.0.jar:1.28.0]
+	at org.apache.poi.openxml4j.opc.internal.ZipContentTypeManager.saveImpl(ZipContentTypeManager.java:67) [poi-ooxml-5.4.1.jar:5.4.1]
+	at org.apache.poi.openxml4j.opc.internal.ContentTypeManager.save(ContentTypeManager.java:450) [poi-ooxml-5.4.1.jar:5.4.1]
+	at org.apache.poi.openxml4j.opc.ZipPackage.saveImpl(ZipPackage.java:674) [poi-ooxml-5.4.1.jar:5.4.1]
+	at org.apache.poi.openxml4j.opc.OPCPackage.save(OPCPackage.java:1700) [poi-ooxml-5.4.1.jar:5.4.1]
+	at org.apache.poi.ooxml.POIXMLDocument.write(POIXMLDocument.java:227) [poi-ooxml-5.4.1.jar:5.4.1]
+	at utilities.ExcelUtility.fillGreenColor(ExcelUtility.java:126) [test-classes/:?]
+	at pageObjects.LeadCreationA.clickAnotherPaymentsReceipt(LeadCreationA.java:301) [test-classes/:?]
+	at testCases.LeadCreation.LeadCreate(LeadCreation.java:55) [test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) [testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687) [testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) [testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) [testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995) [testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) [testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) [testng-7.11.0.jar:7.11.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) [testng-7.11.0.jar:7.11.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:741) [testng-7.11.0.jar:7.11.0]
+	at org.testng.TestRunner.run(TestRunner.java:616) [testng-7.11.0.jar:7.11.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.11.0.jar:7.11.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.11.0.jar:7.11.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.11.0.jar:7.11.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.11.0.jar:7.11.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.11.0.jar:7.11.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.11.0.jar:7.11.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.11.0.jar:7.11.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.11.0.jar:7.11.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.11.0.jar:7.11.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.11.0.jar:7.11.0]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91) [testng-remote.jar:?]

@@ -24,10 +24,10 @@ public class LoginPage extends BasePage {
 	@FindBy(xpath = "//input[@placeholder='Enter Captcha']")
 	WebElement txtCaptcha;
 
-	@FindBy(xpath = "//button[text()='PROCEED']")
+	@FindBy(xpath = "//p[text()='PROCEED']")
 	WebElement btnProceed;
 	
-	@FindBy(xpath = "//img[@alt='FingerprintFirstNew']")
+	@FindBy(xpath = "//div[@style='margin: 10px;']/img[@style='width: 60px;']")
 	WebElement fpIcon;
 	
 	
